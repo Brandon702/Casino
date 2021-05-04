@@ -1,0 +1,44 @@
+{
+    "name": "InputSystem",
+    "maps": [
+        {
+            "name": "Play",
+            "id": "df32fd3c-83d6-4d72-8cbb-766bd94f9099",
+            "actions": [
+                {
+                    "name": "Pause",
+                    "type": "Button",
+                    "id": "d263be59-05b7-45e1-844e-83fe48db0bf9",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "308664de-05e4-439b-86e6-28b15f485d47",
+                    "path": "<Keyboard>/p",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Pause",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "42812658-39bb-4c22-82a9-ab759d5c2f2c",
+                    "path": "<Keyboard>/escape",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Pause",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
