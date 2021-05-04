@@ -22,6 +22,7 @@ public class MainMenuController : MonoBehaviour
     public GameObject InstPanel1;
     public GameObject InstPanel2;
     public GameObject InstPanel3;
+    public int swapVal = 0;
 
     public GameController gameController;
 
@@ -53,6 +54,21 @@ public class MainMenuController : MonoBehaviour
         if (GameController.Instance.state == eState.INSTRUCTIONS)
         {
             //Swap different Panels based on a value
+            if(swapVal == 1)
+            {
+
+                swapVal = 0;
+            }
+            else if (swapVal == 2)
+            {
+
+                swapVal = 0;
+            }
+            else if (swapVal == 3)
+            {
+
+                swapVal = 0;
+            }
         }
     }
 
