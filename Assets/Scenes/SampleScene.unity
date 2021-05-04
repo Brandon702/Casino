@@ -2119,7 +2119,7 @@ MonoBehaviour:
   PausePanel: {fileID: 942637738}
   ConfirmationWindow: {fileID: 1241779736}
   InstructionsPanel: {fileID: 1435300927}
-  GameSelectionPanel: {fileID: 0}
+  GameSelectionPanel: {fileID: 405751517}
   BlackJack: {fileID: 1096993369}
   Poker: {fileID: 417659594}
   Craps: {fileID: 1172208126}
