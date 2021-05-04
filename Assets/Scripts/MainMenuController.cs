@@ -9,19 +9,20 @@ public class MainMenuController : MonoBehaviour
     public GameObject MainMenuPanel;
     public GameObject OptionsPanel;
     public GameObject CreditsPanel;
-    public GameObject GameOverPanel;
+    public GameObject BankerPanel;
     public GameObject PausePanel;
     public GameObject ConfirmationWindow;
-    public GameObject InstructionsPanel1;
-    public GameObject InstructionsPanel2;
-    public GameObject InstructionsPanel3;
-    public GameObject InstructionsPanel4;
-    public GameObject InstructionsPanel5;
+    public GameObject InstructionsPanel;
+    public GameObject GameSelectionPanel;
     public GameObject BlackJack;
     public GameObject Poker;
     public GameObject Craps;
     public GameObject Roulette;
     public GameObject Slots;
+    public GameObject InstPanel1;
+    public GameObject InstPanel2;
+    public GameObject InstPanel3;
+
     public GameController gameController;
 
     private void Start()
@@ -34,15 +35,31 @@ public class MainMenuController : MonoBehaviour
         MainMenuPanel.SetActive(false);
         PausePanel.SetActive(false);
         ConfirmationWindow.SetActive(false);
-        GameOverPanel.SetActive(false);
+        BankerPanel.SetActive(false);
         GameController.Instance.state = eState.GAME;
         Debug.Log("Start Game");
+    }
+
+    public void GameSelection()
+    {
+        MainMenuPanel.SetActive(false);
+        ConfirmationWindow.SetActive(false);
+        GameSelectionPanel.SetActive(true);
+        GameController.Instance.state = eState.MENU;
+    }
+
+    public void InstructionsPanelSwap()
+    {
+        if (GameController.Instance.state == eState.INSTRUCTIONS)
+        {
+            //Swap different Panels based on a value
+        }
     }
 
     public void StartGameSettings1()
     {
         MainMenuPanel.SetActive(false);
-        GameOverPanel.SetActive(false);
+        BankerPanel.SetActive(false);
         ConfirmationWindow.SetActive(true);
         GameController.Instance.state = eState.MENU;
         Debug.Log("Settings1 menu");
@@ -56,39 +73,12 @@ public class MainMenuController : MonoBehaviour
         Debug.Log("Options menu");
     }
 
-    public void Instructions1()
+    public void Instructions()
     {
-        InstructionsPanel1.SetActive(true);
+        InstructionsPanel.SetActive(true);
         MainMenuPanel.SetActive(false);
         PausePanel.SetActive(false);
-    }
-
-    public void Instructions2()
-    {
-        InstructionsPanel2.SetActive(true);
-        MainMenuPanel.SetActive(false);
-        PausePanel.SetActive(false);
-    }
-
-    public void Instructions3()
-    {
-        InstructionsPanel3.SetActive(true);
-        MainMenuPanel.SetActive(false);
-        PausePanel.SetActive(false);
-    }
-
-    public void Instructions4()
-    {
-        InstructionsPanel4.SetActive(true);
-        MainMenuPanel.SetActive(false);
-        PausePanel.SetActive(false);
-    }
-
-    public void Instructions5()
-    {
-        InstructionsPanel5.SetActive(true);
-        MainMenuPanel.SetActive(false);
-        PausePanel.SetActive(false);
+        GameController.Instance.state = eState.INSTRUCTIONS;
     }
 
     public void Credits()
@@ -119,12 +109,8 @@ public class MainMenuController : MonoBehaviour
             MainMenuPanel.SetActive(false);
             OptionsPanel.SetActive(false);
             CreditsPanel.SetActive(false);
-            InstructionsPanel1.SetActive(false);
-            InstructionsPanel2.SetActive(false);
-            InstructionsPanel3.SetActive(false);
-            InstructionsPanel4.SetActive(false);
-            InstructionsPanel5.SetActive(false);
-            GameOverPanel.SetActive(false);
+            InstructionsPanel.SetActive(false);
+            BankerPanel.SetActive(false);
             GameController.Instance.state = eState.PAUSE;
         }
     }
@@ -137,12 +123,8 @@ public class MainMenuController : MonoBehaviour
         PausePanel.SetActive(false);
         OptionsPanel.SetActive(false);
         CreditsPanel.SetActive(false);
-        InstructionsPanel1.SetActive(false);
-        InstructionsPanel2.SetActive(false);
-        InstructionsPanel3.SetActive(false);
-        InstructionsPanel4.SetActive(false);
-        InstructionsPanel5.SetActive(false);
-        GameOverPanel.SetActive(false);
+        InstructionsPanel.SetActive(false);
+        BankerPanel.SetActive(false);
         ConfirmationWindow.SetActive(false);
         GameController.Instance.state = eState.TITLE;
         Console.WriteLine("BacktoMenu menu controller");
@@ -155,21 +137,16 @@ public class MainMenuController : MonoBehaviour
         MainMenuPanel.SetActive(false);
         OptionsPanel.SetActive(false);
         CreditsPanel.SetActive(false);
-        InstructionsPanel1.SetActive(false);
-        InstructionsPanel2.SetActive(false);
-        InstructionsPanel3.SetActive(false);
-        InstructionsPanel4.SetActive(false);
-        InstructionsPanel5.SetActive(false);
-        GameOverPanel.SetActive(false);
+        InstructionsPanel.SetActive(false);
+        BankerPanel.SetActive(false);
         GameController.Instance.state = eState.PAUSE;
         Console.WriteLine("BacktoPause menu controller");
     }
 
-    public void GameOver()
+    public void Banker()
     {
-        GameOverPanel.SetActive(true);
+        BankerPanel.SetActive(true);
         GameController.Instance.state = eState.MENU;
-        Console.WriteLine("Gameover menu controller");
     }
 
     public void ResetApplication()

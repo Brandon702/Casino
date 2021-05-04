@@ -14,6 +14,7 @@ public enum eState
     GAME,
     PAUSE,
     GAMEOVER,
+    INSTRUCTIONS,
     MENU,
     EXITGAME
 }
