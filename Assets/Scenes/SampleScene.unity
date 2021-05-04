@@ -10632,7 +10632,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 405913892}
         m_TargetAssemblyTypeName: MainMenuController, Assembly-CSharp
-        m_MethodName: BackToMenu
+        m_MethodName: Back
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
