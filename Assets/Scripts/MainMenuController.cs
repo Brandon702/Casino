@@ -54,7 +54,7 @@ public class MainMenuController : MonoBehaviour
         if (GameController.Instance.state == eState.INSTRUCTIONS)
         {
             //Swap different Panels based on a value
-            if(swapVal == 1)
+            if (swapVal == 1)
             {
 
                 swapVal = 0;
