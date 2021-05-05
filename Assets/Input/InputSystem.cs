@@ -15,7 +15,7 @@ public class @InputSystem : IInputActionCollection, IDisposable
     ""name"": ""InputSystem"",
     ""maps"": [
         {
-            ""name"": ""Play"",
+            ""name"": ""Controls"",
             ""id"": ""df32fd3c-83d6-4d72-8cbb-766bd94f9099"",
             ""actions"": [
                 {
@@ -55,9 +55,9 @@ public class @InputSystem : IInputActionCollection, IDisposable
     ],
     ""controlSchemes"": []
 }");
-        // Play
-        m_Play = asset.FindActionMap("Play", throwIfNotFound: true);
-        m_Play_Pause = m_Play.FindAction("Pause", throwIfNotFound: true);
+        // Controls
+        m_Controls = asset.FindActionMap("Controls", throwIfNotFound: true);
+        m_Controls_Pause = m_Controls.FindAction("Pause", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -104,29 +104,29 @@ public class @InputSystem : IInputActionCollection, IDisposable
         asset.Disable();
     }
 
-    // Play
-    private readonly InputActionMap m_Play;
-    private IPlayActions m_PlayActionsCallbackInterface;
-    private readonly InputAction m_Play_Pause;
-    public struct PlayActions
+    // Controls
+    private readonly InputActionMap m_Controls;
+    private IControlsActions m_ControlsActionsCallbackInterface;
+    private readonly InputAction m_Controls_Pause;
+    public struct ControlsActions
     {
         private @InputSystem m_Wrapper;
-        public PlayActions(@InputSystem wrapper) { m_Wrapper = wrapper; }
-        public InputAction @Pause => m_Wrapper.m_Play_Pause;
-        public InputActionMap Get() { return m_Wrapper.m_Play; }
+        public ControlsActions(@InputSystem wrapper) { m_Wrapper = wrapper; }
+        public InputAction @Pause => m_Wrapper.m_Controls_Pause;
+        public InputActionMap Get() { return m_Wrapper.m_Controls; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
         public bool enabled => Get().enabled;
-        public static implicit operator InputActionMap(PlayActions set) { return set.Get(); }
-        public void SetCallbacks(IPlayActions instance)
+        public static implicit operator InputActionMap(ControlsActions set) { return set.Get(); }
+        public void SetCallbacks(IControlsActions instance)
         {
-            if (m_Wrapper.m_PlayActionsCallbackInterface != null)
+            if (m_Wrapper.m_ControlsActionsCallbackInterface != null)
             {
-                @Pause.started -= m_Wrapper.m_PlayActionsCallbackInterface.OnPause;
-                @Pause.performed -= m_Wrapper.m_PlayActionsCallbackInterface.OnPause;
-                @Pause.canceled -= m_Wrapper.m_PlayActionsCallbackInterface.OnPause;
+                @Pause.started -= m_Wrapper.m_ControlsActionsCallbackInterface.OnPause;
+                @Pause.performed -= m_Wrapper.m_ControlsActionsCallbackInterface.OnPause;
+                @Pause.canceled -= m_Wrapper.m_ControlsActionsCallbackInterface.OnPause;
             }
-            m_Wrapper.m_PlayActionsCallbackInterface = instance;
+            m_Wrapper.m_ControlsActionsCallbackInterface = instance;
             if (instance != null)
             {
                 @Pause.started += instance.OnPause;
@@ -135,8 +135,8 @@ public class @InputSystem : IInputActionCollection, IDisposable
             }
         }
     }
-    public PlayActions @Play => new PlayActions(this);
-    public interface IPlayActions
+    public ControlsActions @Controls => new ControlsActions(this);
+    public interface IControlsActions
     {
         void OnPause(InputAction.CallbackContext context);
     }

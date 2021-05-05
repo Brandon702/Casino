@@ -2,7 +2,7 @@
     "name": "InputSystem",
     "maps": [
         {
-            "name": "Play",
+            "name": "Controls",
             "id": "df32fd3c-83d6-4d72-8cbb-766bd94f9099",
             "actions": [
                 {
