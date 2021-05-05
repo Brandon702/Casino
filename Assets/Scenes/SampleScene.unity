@@ -2122,7 +2122,6 @@ MonoBehaviour:
   CreditsPanel: {fileID: 612272986}
   BankerPanel: {fileID: 71864472}
   PausePanel: {fileID: 942637738}
-  ConfirmationWindow: {fileID: 1241779736}
   InstructionsPanel: {fileID: 1435300927}
   GameSelectionPanel: {fileID: 405751517}
   BlackJack: {fileID: 1096993369}
@@ -2130,6 +2129,7 @@ MonoBehaviour:
   Craps: {fileID: 1172208126}
   Roulette: {fileID: 1045766995}
   Slots: {fileID: 1444989960}
+  ConfirmationWindow: {fileID: 1241779736}
   InstPanel1: {fileID: 1340035436}
   InstPanel2: {fileID: 1807364343}
   InstPanel3: {fileID: 438128669}
