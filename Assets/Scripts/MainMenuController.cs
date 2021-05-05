@@ -6,32 +6,45 @@ using UnityEngine.SceneManagement;
 
 public class MainMenuController : MonoBehaviour
 {
+    [Header("Panels")]
     public GameObject MainMenuPanel;
     public GameObject OptionsPanel;
     public GameObject CreditsPanel;
     public GameObject BankerPanel;
     public GameObject PausePanel;
-    public GameObject ConfirmationWindow;
     public GameObject InstructionsPanel;
     public GameObject GameSelectionPanel;
-    public GameObject BlackJack;
-    public GameObject Poker;
-    public GameObject Craps;
-    public GameObject Roulette;
-    public GameObject Slots;
+    public GameObject BlackjackPanel;
+    public GameObject PokerPanel;
+    public GameObject CrapsPanel;
+    public GameObject RoulettePanel;
+    public GameObject SlotsPanel;
+
+    [Header("Sub-Panels")]
+    public GameObject ConfirmationWindow;
     public GameObject InstPanel1;
     public GameObject InstPanel2;
     public GameObject InstPanel3;
-    public int swapVal = 0;
 
+    [Header("Other")]
+    public eGames state = eGames.BlackJack;
     public GameController gameController;
+
+    public enum eGames
+    {
+        BlackJack,
+        Slots,
+        Roulette,
+        Poker,
+        Craps
+    }
 
     private void Start()
     {
         gameObject.SetActive(true);
         GameController.Instance.state = eState.TITLE;
     }
-    public void StartGame()
+    private void StartGame()
     {
         MainMenuPanel.SetActive(false);
         PausePanel.SetActive(false);
@@ -39,6 +52,21 @@ public class MainMenuController : MonoBehaviour
         BankerPanel.SetActive(false);
         GameController.Instance.state = eState.GAME;
         Debug.Log("Start Game");
+    }
+
+    public void BlackJack_Selection()
+    {
+        state = eGames.BlackJack;
+    }
+
+    public void Slots_Selection()
+    {
+        state = eGames.Slots;
+    }
+
+    public void Roulette_Selection()
+    {
+        state = eGames.Roulette;
     }
 
     public void GameSelection()
@@ -54,20 +82,17 @@ public class MainMenuController : MonoBehaviour
         if (GameController.Instance.state == eState.INSTRUCTIONS)
         {
             //Swap different Panels based on a value
-            if (swapVal == 1)
+            if (state == eGames.BlackJack)
             {
-
-                swapVal = 0;
+                InstPanel1.SetActive(true);
             }
-            else if (swapVal == 2)
+            else if (state == eGames.Slots)
             {
-
-                swapVal = 0;
+                InstPanel2.SetActive(true);
             }
-            else if (swapVal == 3)
+            else if (state == eGames.Roulette)
             {
-
-                swapVal = 0;
+                InstPanel3.SetActive(true);
             }
         }
     }
@@ -115,6 +140,10 @@ public class MainMenuController : MonoBehaviour
         {
             BackToMenu();
         }
+
+        InstPanel1.SetActive(false);
+        InstPanel2.SetActive(false);
+        InstPanel3.SetActive(false);
     }
 
     public void Pause()
@@ -141,9 +170,9 @@ public class MainMenuController : MonoBehaviour
         CreditsPanel.SetActive(false);
         InstructionsPanel.SetActive(false);
         BankerPanel.SetActive(false);
+        GameSelectionPanel.SetActive(false);
         ConfirmationWindow.SetActive(false);
         GameController.Instance.state = eState.TITLE;
-        Console.WriteLine("BacktoMenu menu controller");
     }
 
     //Back to pause menu
@@ -155,8 +184,37 @@ public class MainMenuController : MonoBehaviour
         CreditsPanel.SetActive(false);
         InstructionsPanel.SetActive(false);
         BankerPanel.SetActive(false);
+        GameSelectionPanel.SetActive(false);
+        ConfirmationWindow.SetActive(false);
         GameController.Instance.state = eState.PAUSE;
-        Console.WriteLine("BacktoPause menu controller");
+    }
+
+    public void Play_Blackjack()
+    {
+        BlackjackPanel.SetActive(true);
+        StartGame();
+    }
+
+    public void Play_Slots()
+    {
+        SlotsPanel.SetActive(true);
+        StartGame();
+    }
+
+    public void Play_Roulette()
+    {
+        RoulettePanel.SetActive(true);
+        StartGame();
+    }
+
+    public void Play_Poker()
+    {
+        //Nothing
+    }
+
+    public void Play_Craps()
+    {
+        //Nothing
     }
 
     public void Banker()
