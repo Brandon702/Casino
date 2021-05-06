@@ -30,6 +30,8 @@ public class MainMenuController : MonoBehaviour
     public eGames state = eGames.BlackJack;
     public GameController gameController;
 
+    //why do the gods hate me?
+
     public enum eGames
     {
         BlackJack,
