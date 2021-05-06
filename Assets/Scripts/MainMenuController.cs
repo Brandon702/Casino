@@ -29,7 +29,6 @@ public class MainMenuController : MonoBehaviour
     [Header("Other")]
     public eGames state = eGames.BlackJack;
     public GameController gameController;
-    public List<GameObject> gameObjects = new List<GameObject>();
 
     //why do the gods hate me?
 
@@ -45,6 +44,7 @@ public class MainMenuController : MonoBehaviour
     private void Start()
     {
         gameObject.SetActive(true);
+<<<<<<< HEAD
         gameObjects.Add(MainMenuPanel);
         gameObjects.Add(OptionsPanel);
         gameObjects.Add(CreditsPanel);
@@ -64,33 +64,16 @@ public class MainMenuController : MonoBehaviour
 
         Disable();
         MainMenuPanel.SetActive(true);
+=======
+>>>>>>> parent of bfe0a84... Improved Entire UI
         GameController.Instance.state = eState.TITLE;
-    }
-
-    public void Disable()
-    {
-        foreach(GameObject gameObject in gameObjects)
-        {
-            gameObject.SetActive(false);
-        }
     }
     private void StartGame()
     {
-        Disable();
-
-        if(state == eGames.BlackJack)
-        {
-            BlackjackPanel.SetActive(true);
-        }
-        else if(state == eGames.Slots)
-        {
-            SlotsPanel.SetActive(true);
-        }
-        else if(state == eGames.Roulette)
-        {
-            RoulettePanel.SetActive(true);
-        }
-
+        MainMenuPanel.SetActive(false);
+        PausePanel.SetActive(false);
+        ConfirmationWindow.SetActive(false);
+        BankerPanel.SetActive(false);
         GameController.Instance.state = eState.GAME;
         Debug.Log("Start Game");
     }
@@ -112,7 +95,8 @@ public class MainMenuController : MonoBehaviour
 
     public void GameSelection()
     {
-        Disable();
+        MainMenuPanel.SetActive(false);
+        ConfirmationWindow.SetActive(false);
         GameSelectionPanel.SetActive(true);
         GameController.Instance.state = eState.MENU;
     }
@@ -145,7 +129,8 @@ public class MainMenuController : MonoBehaviour
 
     public void StartGameSettings1()
     {
-        Disable();
+        MainMenuPanel.SetActive(false);
+        BankerPanel.SetActive(false);
         ConfirmationWindow.SetActive(true);
         GameController.Instance.state = eState.MENU;
         Debug.Log("Settings1 menu");
@@ -153,29 +138,30 @@ public class MainMenuController : MonoBehaviour
 
     public void Options()
     {
-        Disable();
         OptionsPanel.SetActive(true);
+        MainMenuPanel.SetActive(false);
+        PausePanel.SetActive(false);
         Debug.Log("Options menu");
     }
 
     public void Instructions()
     {
-        Disable();
         InstructionsPanel.SetActive(true);
+        MainMenuPanel.SetActive(false);
+        PausePanel.SetActive(false);
         GameController.Instance.state = eState.INSTRUCTIONS;
     }
 
     public void Credits()
     {
-        Disable();
+        MainMenuPanel.SetActive(false);
         CreditsPanel.SetActive(true);
+        PausePanel.SetActive(false);
         Debug.Log("Credits menu");
     }
 
     public void Back()
     {
-        Disable();
-
         if (GameController.Instance.state == eState.PAUSE)
         {
             BackToPause();
@@ -184,14 +170,22 @@ public class MainMenuController : MonoBehaviour
         {
             BackToMenu();
         }
+
+        InstPanel1.SetActive(false);
+        InstPanel2.SetActive(false);
+        InstPanel3.SetActive(false);
     }
 
     public void Pause()
     {
         if (GameController.Instance.state == eState.GAME)
         {
-            Disable();
             PausePanel.SetActive(true);
+            MainMenuPanel.SetActive(false);
+            OptionsPanel.SetActive(false);
+            CreditsPanel.SetActive(false);
+            InstructionsPanel.SetActive(false);
+            BankerPanel.SetActive(false);
             GameController.Instance.state = eState.PAUSE;
         }
     }
@@ -199,36 +193,46 @@ public class MainMenuController : MonoBehaviour
     //Back to main menu
     public void BackToMenu()
     {
-        Disable();
+        //gameObject.SetActive(false);
         MainMenuPanel.SetActive(true);
+        PausePanel.SetActive(false);
+        OptionsPanel.SetActive(false);
+        CreditsPanel.SetActive(false);
+        InstructionsPanel.SetActive(false);
+        BankerPanel.SetActive(false);
+        GameSelectionPanel.SetActive(false);
+        ConfirmationWindow.SetActive(false);
         GameController.Instance.state = eState.TITLE;
     }
 
     //Back to pause menu
     public void BackToPause()
     {
-        Disable();
         PausePanel.SetActive(true);
+        MainMenuPanel.SetActive(false);
+        OptionsPanel.SetActive(false);
+        CreditsPanel.SetActive(false);
+        InstructionsPanel.SetActive(false);
+        BankerPanel.SetActive(false);
+        GameSelectionPanel.SetActive(false);
+        ConfirmationWindow.SetActive(false);
         GameController.Instance.state = eState.PAUSE;
     }
 
     public void Play_Blackjack()
     {
-        Disable();
         BlackjackPanel.SetActive(true);
         StartGame();
     }
 
     public void Play_Slots()
     {
-        Disable();
         SlotsPanel.SetActive(true);
         StartGame();
     }
 
     public void Play_Roulette()
     {
-        Disable();
         RoulettePanel.SetActive(true);
         StartGame();
     }
@@ -245,14 +249,13 @@ public class MainMenuController : MonoBehaviour
 
     public void Banker()
     {
-        Disable();
         BankerPanel.SetActive(true);
         GameController.Instance.state = eState.MENU;
     }
 
     public void ResetApplication()
     {
-        SceneManager.LoadScene("Casino");
+        SceneManager.LoadScene("Pente");
     }
 
     public void ExitGame()
