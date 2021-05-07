@@ -60,6 +60,7 @@ public class MainMenuController : MonoBehaviour
         gameObjects.Add(InstPanel2);
         gameObjects.Add(InstPanel3);
 
+        Disable();
         MainMenuPanel.SetActive(true);
         GameController.Instance.state = eState.TITLE;
     }
@@ -121,14 +122,20 @@ public class MainMenuController : MonoBehaviour
             //Swap different Panels based on a value
             if (state == eGames.BlackJack)
             {
+                Disable();
+                InstructionsPanel.SetActive(true);
                 InstPanel1.SetActive(true);
             }
             else if (state == eGames.Slots)
             {
+                Disable();
+                InstructionsPanel.SetActive(true);
                 InstPanel2.SetActive(true);
             }
             else if (state == eGames.Roulette)
             {
+                Disable();
+                InstructionsPanel.SetActive(true);
                 InstPanel3.SetActive(true);
             }
         }
