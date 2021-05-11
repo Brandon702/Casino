@@ -53,6 +53,8 @@ public class GameController : MonoBehaviour
     public GameObject gameOverPanel;
     public TextMeshProUGUI eventDisplay;
     public AudioSource sfx;
+    public int Chips;
+    public int Cash;
 
     //Dont touch these variables:
     bool forceOnce = true;
