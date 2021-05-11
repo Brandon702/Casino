@@ -22,6 +22,7 @@ public class MainMenuController : MonoBehaviour
 
     [Header("Sub-Panels")]
     public GameObject ConfirmationWindow;
+    public GameObject BettingWinow;
     public GameObject InstPanel1;
     public GameObject InstPanel2;
     public GameObject InstPanel3;
