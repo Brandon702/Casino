@@ -50,11 +50,15 @@ public class GameController : MonoBehaviour
 
     [Header("Editable values")]
     public eState state = eState.TITLE;
-    public GameObject gameOverPanel;
-    public TextMeshProUGUI eventDisplay;
-    public AudioSource sfx;
     public int Chips;
     public int Cash;
+
+    [Header("Systems")]
+    public GameObject gameOverPanel;
+    public TMP_InputField CashToChipsInput;
+    public TMP_InputField ChipsToCashInput;
+    public TMP_Text cashText;
+    public TMP_Text chipsText;
 
     //Dont touch these variables:
     bool forceOnce = true;
@@ -64,7 +68,8 @@ public class GameController : MonoBehaviour
 
     void Start()
     {
-
+        cashText.text = Cash.ToString();
+        chipsText.text = Chips.ToString();
     }
 
     void Update()
@@ -103,6 +108,56 @@ public class GameController : MonoBehaviour
     public void GameOver()
     {
         gameOverPanel.SetActive(true);
+    }
+
+    public void ConvertCurrency()
+    {
+        if (ChipsToCashInput.text != "" && CashToChipsInput.text != "")
+        {
+            ChipsToCashInput.text = null;
+            CashToChipsInput.text = null;
+            Debug.Log("Only One Operation is allowed per convertion");
+        }
+        else if (ChipsToCashInput.text != "" || CashToChipsInput.text != "")
+        {
+            if (ChipsToCashInput.text != "")
+            {
+                ChipsToCash();
+            }
+            else if (CashToChipsInput.text != "")
+            {
+                CashToChips();
+            }
+        }
+        
+        //Update Text
+        cashText.text = Cash.ToString();
+        chipsText.text = Chips.ToString();
+
+        ChipsToCashInput.text = null;
+        CashToChipsInput.text = null;
+
+    }
+
+    private void CashToChips()
+    {
+        Chips += int.Parse(CashToChipsInput.text);
+        Cash -= int.Parse(CashToChipsInput.text);
+    }
+
+    private void ChipsToCash()
+    {
+        if (Chips >= int.Parse(ChipsToCashInput.text))
+        {
+            Chips -= int.Parse(ChipsToCashInput.text);
+            Cash  += int.Parse(ChipsToCashInput.text);
+        }
+        else if (Chips > 0)
+        {
+            int allChips = Chips;
+            Chips-= allChips;
+            Cash += allChips;
+        }    
     }
 }
 
