@@ -267,6 +267,8 @@ public class MainMenuController : MonoBehaviour
     {
         Disable();
         BankerPanel.SetActive(true);
+        GameController.Instance.cashText.text = GameController.Instance.Cash.ToString();
+        GameController.Instance.chipsText.text = GameController.Instance.Chips.ToString();
         GameController.Instance.state = eState.MENU;
     }
 
