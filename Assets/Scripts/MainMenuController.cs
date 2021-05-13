@@ -28,7 +28,7 @@ public class MainMenuController : MonoBehaviour
     public GameObject InstPanel3;
 
     [Header("Other")]
-    public eGames state = eGames.BlackJack;
+    public eGames state = eGames.None;
     public GameController gameController;
     public List<GameObject> gameObjects = new List<GameObject>();
 
@@ -38,7 +38,8 @@ public class MainMenuController : MonoBehaviour
         Slots,
         Roulette,
         Poker,
-        Craps
+        Craps,
+        None
     }
 
     private void Start()
@@ -179,9 +180,28 @@ public class MainMenuController : MonoBehaviour
         {
             BackToPause();
         }
+        else if (state == eGames.BlackJack)
+        {
+            Disable();
+            BlackjackPanel.SetActive(true);
+            GameController.Instance.state = eState.GAME;
+        }
+        else if (state == eGames.Roulette)
+        {
+            Disable();
+            RoulettePanel.SetActive(true);
+            GameController.Instance.state = eState.GAME;
+        }
+        else if (state == eGames.Slots)
+        {
+            Disable();
+            SlotsPanel.SetActive(true);
+            GameController.Instance.state = eState.GAME;
+        }
         else
         {
             BackToMenu();
+            state = eGames.None;
         }
     }
 
@@ -201,6 +221,7 @@ public class MainMenuController : MonoBehaviour
         Disable();
         MainMenuPanel.SetActive(true);
         GameController.Instance.state = eState.TITLE;
+        state = eGames.None;
     }
 
     //Back to pause menu
@@ -214,21 +235,21 @@ public class MainMenuController : MonoBehaviour
     public void Play_Blackjack()
     {
         Disable();
-        BlackjackPanel.SetActive(true);
+        state = eGames.BlackJack;
         StartGame();
     }
 
     public void Play_Slots()
     {
         Disable();
-        SlotsPanel.SetActive(true);
+        state = eGames.Slots;
         StartGame();
     }
 
     public void Play_Roulette()
     {
         Disable();
-        RoulettePanel.SetActive(true);
+        state = eGames.Roulette;
         StartGame();
     }
 
