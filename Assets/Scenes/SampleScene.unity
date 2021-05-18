@@ -408,7 +408,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &19631749
 RectTransform:
   m_ObjectHideFlags: 0
@@ -772,6 +772,45 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 34938737}
   m_CullTransparentMesh: 1
+--- !u!1 &36054127
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 36054128}
+  m_Layer: 5
+  m_Name: UI_Text
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &36054128
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 36054127}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1179599189}
+  - {fileID: 683300543}
+  - {fileID: 1773828025}
+  - {fileID: 386612678}
+  m_Father: {fileID: 1834024105}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &39436079
 GameObject:
   m_ObjectHideFlags: 0
@@ -2010,7 +2049,7 @@ GameObject:
   - component: {fileID: 121418956}
   - component: {fileID: 121418955}
   m_Layer: 5
-  m_Name: Spin
+  m_Name: Spin_Btn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3724,7 +3763,7 @@ GameObject:
   - component: {fileID: 279399592}
   - component: {fileID: 279399591}
   m_Layer: 5
-  m_Name: Back
+  m_Name: Back_Btn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4015,7 +4054,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -4569,16 +4608,16 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 337962417}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.32568836, y: 1.5039, z: 1}
+  m_LocalScale: {x: 0.4722482, y: 2.25585, z: 1}
   m_Children: []
-  m_Father: {fileID: 1834024105}
-  m_RootOrder: 13
+  m_Father: {fileID: 1324306434}
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 51.6, y: -170}
+  m_AnchoredPosition: {x: 74.82, y: -255}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &337962419
@@ -4624,7 +4663,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 337962420}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1045766999}
+        m_TargetAssemblyTypeName: RController, Assembly-CSharp
+        m_MethodName: chipClicked
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 337962419}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Button, UnityEngine.UI
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &337962420
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4689,16 +4740,16 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 358564039}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.32568836, y: 1.5039, z: 1}
+  m_LocalScale: {x: 0.4722482, y: 2.25585, z: 1}
   m_Children: []
-  m_Father: {fileID: 1834024105}
-  m_RootOrder: 14
+  m_Father: {fileID: 1324306434}
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 106, y: -170}
+  m_AnchoredPosition: {x: 153.70001, y: -255}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &358564041
@@ -4744,7 +4795,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 358564042}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1045766999}
+        m_TargetAssemblyTypeName: RController, Assembly-CSharp
+        m_MethodName: chipClicked
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 358564041}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Button, UnityEngine.UI
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &358564042
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4818,10 +4881,10 @@ RectTransform:
   m_Father: {fileID: 171447087}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 20}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 125, y: -187.49998}
+  m_SizeDelta: {x: 250, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &379827524
 MonoBehaviour:
@@ -5152,7 +5215,7 @@ GameObject:
   - component: {fileID: 386612680}
   - component: {fileID: 386612679}
   m_Layer: 5
-  m_Name: Chips (3)
+  m_Name: BetValue
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5169,8 +5232,8 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 1834024105}
-  m_RootOrder: 18
+  m_Father: {fileID: 36054128}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -6310,16 +6373,16 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 415454602}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.32568836, y: 1.5039, z: 1}
+  m_LocalScale: {x: 0.4722482, y: 2.25585, z: 1}
   m_Children: []
-  m_Father: {fileID: 1834024105}
-  m_RootOrder: 16
+  m_Father: {fileID: 1324306434}
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 214.2, y: -170}
+  m_AnchoredPosition: {x: 310.59, y: -255}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &415454604
@@ -6365,7 +6428,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 415454605}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1045766999}
+        m_TargetAssemblyTypeName: RController, Assembly-CSharp
+        m_MethodName: chipClicked
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 415454604}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Button, UnityEngine.UI
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &415454605
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7704,16 +7779,16 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 495013680}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.32568836, y: 1.5039, z: 1}
+  m_LocalScale: {x: 0.4722482, y: 2.25585, z: 1}
   m_Children: []
-  m_Father: {fileID: 1834024105}
-  m_RootOrder: 10
+  m_Father: {fileID: 1324306434}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -111.6, y: -170}
+  m_AnchoredPosition: {x: -161.82002, y: -255}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &495013682
@@ -7759,7 +7834,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 495013683}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1045766999}
+        m_TargetAssemblyTypeName: RController, Assembly-CSharp
+        m_MethodName: chipClicked
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 495013682}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Button, UnityEngine.UI
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &495013683
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8483,8 +8570,8 @@ RectTransform:
   m_Father: {fileID: 2013236818}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMin: {x: 1, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -9371,16 +9458,16 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 549940492}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.32568836, y: 1.5039, z: 1}
+  m_LocalScale: {x: 0.4722482, y: 2.25585, z: 1}
   m_Children: []
-  m_Father: {fileID: 1834024105}
-  m_RootOrder: 15
+  m_Father: {fileID: 1324306434}
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 160.4, y: -170}
+  m_AnchoredPosition: {x: 232.58005, y: -255}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &549940494
@@ -9426,7 +9513,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 549940495}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1045766999}
+        m_TargetAssemblyTypeName: RController, Assembly-CSharp
+        m_MethodName: chipClicked
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 549940494}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Button, UnityEngine.UI
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &549940495
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10040,10 +10139,10 @@ RectTransform:
   m_Father: {fileID: 171447087}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 20}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 125, y: -20.833332}
+  m_SizeDelta: {x: 250, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &606906174
 MonoBehaviour:
@@ -10899,7 +10998,7 @@ GameObject:
   - component: {fileID: 683300545}
   - component: {fileID: 683300544}
   m_Layer: 5
-  m_Name: Chips (1)
+  m_Name: ChipsAmount
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10916,8 +11015,8 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 1834024105}
-  m_RootOrder: 7
+  m_Father: {fileID: 36054128}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -15239,13 +15338,14 @@ GameObject:
   - component: {fileID: 1045766996}
   - component: {fileID: 1045766998}
   - component: {fileID: 1045766997}
+  - component: {fileID: 1045766999}
   m_Layer: 5
   m_Name: Roulette
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1045766996
 RectTransform:
   m_ObjectHideFlags: 0
@@ -15304,6 +15404,28 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1045766995}
   m_CullTransparentMesh: 1
+--- !u!114 &1045766999
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1045766995}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a495c24dacc18a942b0521c5179e7c36, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chip_1: {fileID: 1554298810}
+  chip_5: {fileID: 2106450862}
+  chip_10: {fileID: 495013682}
+  chip_20: {fileID: 1140259421}
+  chip_50: {fileID: 2112060344}
+  chip_100: {fileID: 337962419}
+  chip_500: {fileID: 358564041}
+  chip_1000: {fileID: 549940494}
+  chip_5000: {fileID: 415454604}
+  betValue: {fileID: 386612679}
 --- !u!1 &1050650634
 GameObject:
   m_ObjectHideFlags: 0
@@ -15336,8 +15458,8 @@ RectTransform:
   m_Father: {fileID: 934345372}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMin: {x: 1, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -15536,7 +15658,7 @@ GameObject:
   - component: {fileID: 1052750647}
   - component: {fileID: 1052750646}
   m_Layer: 5
-  m_Name: Image
+  m_Name: Bet Board
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -16480,10 +16602,10 @@ RectTransform:
   m_Father: {fileID: 171447087}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 20}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 125, y: -104.16666}
+  m_SizeDelta: {x: 250, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1117469170
 MonoBehaviour:
@@ -16649,16 +16771,16 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1140259419}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.32568836, y: 1.5039, z: 1}
+  m_LocalScale: {x: 0.4722482, y: 2.25585, z: 1}
   m_Children: []
-  m_Father: {fileID: 1834024105}
-  m_RootOrder: 11
+  m_Father: {fileID: 1324306434}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -57.2, y: -170}
+  m_AnchoredPosition: {x: -82.93999, y: -255}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1140259421
@@ -16704,7 +16826,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1140259422}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1045766999}
+        m_TargetAssemblyTypeName: RController, Assembly-CSharp
+        m_MethodName: chipClicked
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1140259421}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Button, UnityEngine.UI
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1140259422
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16755,7 +16889,7 @@ GameObject:
   - component: {fileID: 1156361061}
   - component: {fileID: 1156361060}
   m_Layer: 5
-  m_Name: Image (1)
+  m_Name: Wheel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -17436,7 +17570,7 @@ GameObject:
   - component: {fileID: 1179599191}
   - component: {fileID: 1179599190}
   m_Layer: 5
-  m_Name: Chips
+  m_Name: Chips_Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -17453,8 +17587,8 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 1834024105}
-  m_RootOrder: 6
+  m_Father: {fileID: 36054128}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -19743,6 +19877,50 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1300996870}
   m_CullTransparentMesh: 1
+--- !u!1 &1324306433
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1324306434}
+  m_Layer: 5
+  m_Name: Chips
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1324306434
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1324306433}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.6896551, y: 0.6666667, z: 1}
+  m_Children:
+  - {fileID: 1554298809}
+  - {fileID: 2106450861}
+  - {fileID: 495013681}
+  - {fileID: 1140259420}
+  - {fileID: 2112060343}
+  - {fileID: 337962418}
+  - {fileID: 358564040}
+  - {fileID: 549940493}
+  - {fileID: 415454603}
+  m_Father: {fileID: 1834024105}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1326315131
 GameObject:
   m_ObjectHideFlags: 0
@@ -20127,7 +20305,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -21081,10 +21259,10 @@ RectTransform:
   m_Father: {fileID: 171447087}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 50}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 125, y: -244.16664}
+  m_SizeDelta: {x: 250, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1473723050
 MonoBehaviour:
@@ -21602,10 +21780,10 @@ RectTransform:
   m_Father: {fileID: 171447087}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 20}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 125, y: -145.83333}
+  m_SizeDelta: {x: 250, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1497739031
 MonoBehaviour:
@@ -22301,16 +22479,16 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1554298808}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.32568836, y: 1.5039, z: 1}
+  m_LocalScale: {x: 0.4722482, y: 2.25585, z: 1}
   m_Children: []
-  m_Father: {fileID: 1834024105}
-  m_RootOrder: 8
+  m_Father: {fileID: 1324306434}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -219.8, y: -170}
+  m_AnchoredPosition: {x: -318.71002, y: -255}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1554298810
@@ -22356,7 +22534,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1554298811}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1045766999}
+        m_TargetAssemblyTypeName: RController, Assembly-CSharp
+        m_MethodName: chipClicked
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1554298810}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Button, UnityEngine.UI
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1554298811
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22966,7 +23156,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -24941,7 +25131,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -25638,7 +25828,7 @@ GameObject:
   - component: {fileID: 1773828027}
   - component: {fileID: 1773828026}
   m_Layer: 5
-  m_Name: Chips (2)
+  m_Name: Bet_Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -25655,8 +25845,8 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 1834024105}
-  m_RootOrder: 17
+  m_Father: {fileID: 36054128}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -26638,8 +26828,8 @@ RectTransform:
   m_Father: {fileID: 460968116}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMin: {x: 1, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -26841,7 +27031,7 @@ RectTransform:
   m_GameObject: {fileID: 1834024104}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.45, y: 1.5, z: 1}
+  m_LocalScale: {x: 1.45, y: 1, z: 1}
   m_Children:
   - {fileID: 279399590}
   - {fileID: 121418954}
@@ -26849,19 +27039,8 @@ RectTransform:
   - {fileID: 1052750645}
   - {fileID: 1156361059}
   - {fileID: 149414642}
-  - {fileID: 1179599189}
-  - {fileID: 683300543}
-  - {fileID: 1554298809}
-  - {fileID: 2106450861}
-  - {fileID: 495013681}
-  - {fileID: 1140259420}
-  - {fileID: 2112060343}
-  - {fileID: 337962418}
-  - {fileID: 358564040}
-  - {fileID: 549940493}
-  - {fileID: 415454603}
-  - {fileID: 1773828025}
-  - {fileID: 386612678}
+  - {fileID: 1324306434}
+  - {fileID: 36054128}
   m_Father: {fileID: 1045766996}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -27398,8 +27577,8 @@ RectTransform:
   m_Father: {fileID: 2047902101}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMin: {x: 1, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -28617,10 +28796,10 @@ RectTransform:
   m_Father: {fileID: 171447087}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 20}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 125, y: -62.499996}
+  m_SizeDelta: {x: 250, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2067973785
 MonoBehaviour:
@@ -29201,16 +29380,16 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2106450860}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.32568836, y: 1.5039, z: 1}
+  m_LocalScale: {x: 0.4722482, y: 2.25585, z: 1}
   m_Children: []
-  m_Father: {fileID: 1834024105}
-  m_RootOrder: 9
+  m_Father: {fileID: 1324306434}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -165.4, y: -170}
+  m_AnchoredPosition: {x: -239.82999, y: -255}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2106450862
@@ -29256,7 +29435,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2106450863}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1045766999}
+        m_TargetAssemblyTypeName: RController, Assembly-CSharp
+        m_MethodName: chipClicked
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 2106450862}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Button, UnityEngine.UI
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2106450863
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -29321,16 +29512,16 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2112060342}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.32568836, y: 1.5039, z: 1}
+  m_LocalScale: {x: 0.4722482, y: 2.25585, z: 1}
   m_Children: []
-  m_Father: {fileID: 1834024105}
-  m_RootOrder: 12
+  m_Father: {fileID: 1324306434}
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -2.8, y: -170}
+  m_AnchoredPosition: {x: -4.0600095, y: -255}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2112060344
@@ -29376,7 +29567,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2112060345}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1045766999}
+        m_TargetAssemblyTypeName: RController, Assembly-CSharp
+        m_MethodName: chipClicked
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 2112060344}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Button, UnityEngine.UI
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2112060345
 MonoBehaviour:
   m_ObjectHideFlags: 0
