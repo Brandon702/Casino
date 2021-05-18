@@ -58,8 +58,6 @@ public class RController : MonoBehaviour
         else if (button == chip_5000)
         {
             betValue.text = (int.Parse(betValue.text) + 5000).ToString();
-        }
-
-         
+        } 
     }
 }
