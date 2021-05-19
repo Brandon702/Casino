@@ -2031,13 +2031,13 @@ RectTransform:
   m_Children:
   - {fileID: 1372196529}
   - {fileID: 1529384281}
-  m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_Father: {fileID: 405913888}
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 683, y: 384}
-  m_SizeDelta: {x: 1366, y: 768}
+  m_AnchoredPosition: {x: 184.52832, y: 154.13208}
+  m_SizeDelta: {x: 369.05664, y: 308.26416}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &71864474
 MonoBehaviour:
@@ -7948,7 +7948,7 @@ RectTransform:
   - {fileID: 284241633}
   - {fileID: 2011436989}
   m_Father: {fileID: 405913888}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -8030,6 +8030,7 @@ RectTransform:
   - {fileID: 612272987}
   - {fileID: 1241779737}
   - {fileID: 1435300928}
+  - {fileID: 71864473}
   - {fileID: 405751518}
   - {fileID: 1096993370}
   - {fileID: 1045766996}
@@ -8434,7 +8435,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 405913888}
-  m_RootOrder: 11
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -13330,59 +13331,58 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cards:
-  - {fileID: 21300000, guid: 3b1b16e354793664d95e4463bf4a10b0, type: 3}
-  - {fileID: 21300000, guid: 8acf4a6ee53c3a34a8440378a7f42dd2, type: 3}
-  - {fileID: 21300000, guid: 6a035ad6e9f172a48b7e6532a66146bd, type: 3}
-  - {fileID: 21300000, guid: 2a83820de9c36234d97b9fb33dc0348e, type: 3}
-  - {fileID: 21300000, guid: fa8ccbe7349943e41b4b7927b47f530d, type: 3}
-  - {fileID: 21300000, guid: 88ef74e1735dc6d48abe4c81556dc264, type: 3}
-  - {fileID: 21300000, guid: bf040c4ae5c21b549901bb567c9f4618, type: 3}
-  - {fileID: 21300000, guid: 5142e0f4b2c295a4a8a9d00e3337b12d, type: 3}
-  - {fileID: 21300000, guid: fdb59c49db5a70041bac143dd30d91b0, type: 3}
-  - {fileID: 21300000, guid: fecf963b6ae7b234da8caadf1ff2f918, type: 3}
-  - {fileID: 21300000, guid: a8e6dfc7cd7192140ac8ea0a86ffc145, type: 3}
-  - {fileID: 21300000, guid: 9b62e36508670124fa34e3b72a8830ee, type: 3}
-  - {fileID: 21300000, guid: b568b2b3fd8b068478eb61b290fb4383, type: 3}
-  - {fileID: 21300000, guid: bb04f9042e2b6d74e96d9b51aefca1e8, type: 3}
-  - {fileID: 21300000, guid: ea63b83d23777874eb3c330fb671ac3e, type: 3}
-  - {fileID: 21300000, guid: 6f572b07cd70d7e40a7104fb077a24f1, type: 3}
-  - {fileID: 21300000, guid: 4a959d389814e85459405ec276847e79, type: 3}
-  - {fileID: 21300000, guid: 5d8e8fd687ef7fe48bc14fe1f81310fd, type: 3}
-  - {fileID: 21300000, guid: 7771d5c556b86094d8ac631147909f68, type: 3}
-  - {fileID: 21300000, guid: fed17a2e840235741a4d670fa0119db6, type: 3}
-  - {fileID: 21300000, guid: 4e978dfc3fecf4b4090f6972889475d0, type: 3}
-  - {fileID: 21300000, guid: 592ad4517effd73439058c989b5ca95c, type: 3}
-  - {fileID: 21300000, guid: e7642dee89631e2469251f220da19771, type: 3}
-  - {fileID: 21300000, guid: 7d2fb5fef14f0da42a22b065969903d4, type: 3}
-  - {fileID: 21300000, guid: 88bc150e08d97014684a0334fd6b635e, type: 3}
-  - {fileID: 21300000, guid: ca652c433c4de9840a0178ef34656207, type: 3}
-  - {fileID: 21300000, guid: 5f53821333c54ba4dba1976864145526, type: 3}
-  - {fileID: 21300000, guid: 7f24bc740247e794abd7e9470aa258f1, type: 3}
-  - {fileID: 21300000, guid: a450cc6e40f223a4e832ce1b5f3261bb, type: 3}
-  - {fileID: 21300000, guid: 5e0307e66b4636e48bbb69f4748d001c, type: 3}
-  - {fileID: 21300000, guid: 383b00e925ded3445a3a85f8eeb9840c, type: 3}
-  - {fileID: 21300000, guid: d2d50cb0c45e015498b7f77ace6e9b68, type: 3}
-  - {fileID: 21300000, guid: 6fe92673d2b55df4cab5229a8f70d717, type: 3}
-  - {fileID: 21300000, guid: 5b171942f87411949b09f280f33a2ad1, type: 3}
-  - {fileID: 21300000, guid: 0614fafc8adf8c847a1611807b6e2778, type: 3}
-  - {fileID: 21300000, guid: 2cc82c5ab23633f4294a675e7dd265dd, type: 3}
-  - {fileID: 21300000, guid: deb89d5e59d28aa4db5fa330d1915889, type: 3}
-  - {fileID: 21300000, guid: 24a8a357038ea7e4a826cd4c134fc49c, type: 3}
-  - {fileID: 21300000, guid: e7777886188a0d94cb676c7f772dfee1, type: 3}
-  - {fileID: 21300000, guid: 29eec6966c742604b936632f2e630953, type: 3}
-  - {fileID: 21300000, guid: 7dd49d5d5021d4a4eba7e6fb2d852389, type: 3}
-  - {fileID: 21300000, guid: e9a5263706c08fd4f815ec3e1f6754a7, type: 3}
-  - {fileID: 21300000, guid: d37ea2386c6293a49ada9eb837d1624b, type: 3}
-  - {fileID: 21300000, guid: 6079c916c8ca1754d8e661e8d0d4c0fd, type: 3}
-  - {fileID: 21300000, guid: fbffd1b71f778e3468543869736cb11b, type: 3}
-  - {fileID: 21300000, guid: edc919b04102cc34ea6799c64d321db4, type: 3}
-  - {fileID: 21300000, guid: a8bf11c73d252194b9acc65d3da6b981, type: 3}
-  - {fileID: 21300000, guid: d51c756279a303149b5a048a26ab1581, type: 3}
-  - {fileID: 21300000, guid: 6c0686117e1270a449c5f85a8e57b62e, type: 3}
-  - {fileID: 21300000, guid: 94759e3f189f9e94d81b17508e988fd5, type: 3}
-  - {fileID: 21300000, guid: 521ff5432d7d0734186d7859fa4c6906, type: 3}
-  - {fileID: 21300000, guid: 093c8efef48cc414bb55e182e2134640, type: 3}
-  - {fileID: 21300000, guid: e346aca91d068dd498b0d70a67d5b409, type: 3}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!114 &621902780
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20145,7 +20145,7 @@ RectTransform:
   m_Children:
   - {fileID: 1834024105}
   m_Father: {fileID: 405913888}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -21330,7 +21330,7 @@ RectTransform:
   - {fileID: 1192581639}
   - {fileID: 621902778}
   m_Father: {fileID: 405913888}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -22744,7 +22744,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 405913888}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -23085,17 +23085,17 @@ MonoBehaviour:
   chip8: {fileID: 386495407}
   chip9: {fileID: 641487825}
   deal: {fileID: 2012801988}
-  hit: {fileID: 1007535006}
-  stand: {fileID: 1843296165}
-  playerScript: {fileID: 1134239094}
-  dealerScript: {fileID: 710305239}
-  scoreText: {fileID: 1541758965}
-  dealerScoreText: {fileID: 1586473135}
-  betsText: {fileID: 1541400638}
-  cashText: {fileID: 695420159}
-  mainText: {fileID: 1562370797}
-  standBtnText: {fileID: 554852081}
-  hideCard: {fileID: 493429792}
+  hit: {fileID: 0}
+  stand: {fileID: 0}
+  playerScript: {fileID: 0}
+  dealerScript: {fileID: 0}
+  scoreText: {fileID: 0}
+  dealerScoreText: {fileID: 0}
+  betsText: {fileID: 0}
+  cashText: {fileID: 0}
+  mainText: {fileID: 0}
+  standBtnText: {fileID: 0}
+  hideCard: {fileID: 0}
 --- !u!1 &1194499909
 GameObject:
   m_ObjectHideFlags: 0
@@ -24414,7 +24414,7 @@ RectTransform:
   m_Children:
   - {fileID: 1326315132}
   m_Father: {fileID: 405913888}
-  m_RootOrder: 12
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -27495,7 +27495,7 @@ RectTransform:
   m_Children:
   - {fileID: 789353420}
   m_Father: {fileID: 405913888}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
