@@ -47,8 +47,6 @@ public class BJController : MonoBehaviour
         chip7.onClick.AddListener(() => ChipClicked(chip7));
         chip8.onClick.AddListener(() => ChipClicked(chip8));
         chip9.onClick.AddListener(() => ChipClicked(chip9));
-
-        betsText.text = "0";
     }
 
     private void DealClicked()
@@ -163,43 +161,91 @@ public class BJController : MonoBehaviour
         betsText.text = "$" + money.ToString();
     }*/
 
+    public void OnEnable()
+    {
+        betsText.text = "0";
+        cashText.text = GameController.Instance.Chips.ToString();
+    }
+
+    public void OnDisable()
+    {
+        GameController.Instance.Chips = int.Parse(cashText.text) + int.Parse(betsText.text);
+    }
+
     public void ChipClicked(Button button)
     {
         if (button == chip1)
         {
-            betsText.text = (int.Parse(betsText.text) + 1).ToString();
+            if (int.Parse(cashText.text) >= 1)
+            {
+                cashText.text = (int.Parse(cashText.text) - 1).ToString();
+                betsText.text = (int.Parse(betsText.text) + 1).ToString();
+            }
+
         }
         else if (button == chip2)
         {
-            betsText.text = (int.Parse(betsText.text) + 5).ToString();
+            if (int.Parse(cashText.text) >= 5)
+            {
+                cashText.text = (int.Parse(cashText.text) - 5).ToString();
+                betsText.text = (int.Parse(betsText.text) + 5).ToString();
+            }
         }
         else if (button == chip3)
         {
-            betsText.text = (int.Parse(betsText.text) + 10).ToString();
+            if (int.Parse(cashText.text) >= 10)
+            {
+                cashText.text = (int.Parse(cashText.text) - 10).ToString();
+                betsText.text = (int.Parse(betsText.text) + 10).ToString();
+            }
         }
         else if (button == chip4)
         {
-            betsText.text = (int.Parse(betsText.text) + 20).ToString();
+            if (int.Parse(cashText.text) >= 20)
+            {
+                cashText.text = (int.Parse(cashText.text) - 20).ToString();
+                betsText.text = (int.Parse(betsText.text) + 20).ToString();
+            }
         }
         else if (button == chip5)
         {
-            betsText.text = (int.Parse(betsText.text) + 50).ToString();
+            if (int.Parse(cashText.text) >= 50)
+            {
+                cashText.text = (int.Parse(cashText.text) - 50).ToString();
+                betsText.text = (int.Parse(betsText.text) + 50).ToString();
+            }
         }
         else if (button == chip6)
         {
-            betsText.text = (int.Parse(betsText.text) + 100).ToString();
+            if (int.Parse(cashText.text) >= 100)
+            {
+                cashText.text = (int.Parse(cashText.text) - 100).ToString();
+                betsText.text = (int.Parse(betsText.text) + 100).ToString();
+            }
         }
         else if (button == chip7)
         {
-            betsText.text = (int.Parse(betsText.text) + 500).ToString();
+            if (int.Parse(cashText.text) >= 500)
+            {
+                cashText.text = (int.Parse(cashText.text) - 500).ToString();
+                betsText.text = (int.Parse(betsText.text) + 500).ToString();
+            }
         }
         else if (button == chip8)
         {
-            betsText.text = (int.Parse(betsText.text) + 1000).ToString();
+            if (int.Parse(cashText.text) >= 1000)
+            {
+                cashText.text = (int.Parse(cashText.text) - 1000).ToString();
+                betsText.text = (int.Parse(betsText.text) + 1000).ToString();
+            }
         }
-        else if (button == chip8)
+        else if (button == chip9)
         {
-            betsText.text = (int.Parse(betsText.text) + 5000).ToString();
+            if (int.Parse(cashText.text) >= 5000)
+            {
+                cashText.text = (int.Parse(cashText.text) - 5000).ToString();
+                betsText.text = (int.Parse(betsText.text) + 5000).ToString();
+            }
         }
     }
 }
