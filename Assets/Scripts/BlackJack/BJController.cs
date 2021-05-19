@@ -65,7 +65,8 @@ public class BJController : MonoBehaviour
         scoreText.text = playerScript.handValue.ToString();
         dealerScoreText.text = "Hand: " + dealerScript.handValue.ToString();
 
-        hideCard.GetComponent<Renderer>().enabled = true;
+        //hideCard.GetComponent<Renderer>().enabled = true;
+        hideCard.GetComponent<Image>().enabled = true;
 
         deal.gameObject.SetActive(false);
         hit.gameObject.SetActive(true);
@@ -146,7 +147,7 @@ public class BJController : MonoBehaviour
             deal.gameObject.SetActive(true);
             mainText.gameObject.SetActive(true);
             dealerScoreText.gameObject.SetActive(true);
-            hideCard.GetComponent<Renderer>().enabled = false;
+            hideCard.GetComponent<Image>().enabled = false;
             cashText.text = "$" + playerScript.GetMoney().ToString();
             standClicked = 0;
         }
