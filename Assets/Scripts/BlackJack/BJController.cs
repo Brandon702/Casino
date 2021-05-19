@@ -31,22 +31,24 @@ public class BJController : MonoBehaviour
     public TMP_Text standBtnText;
 
     public GameObject hideCard;
-    int money = 0; 
+    int money = 0;
 
     void Start()
     {
         deal.onClick.AddListener(() => DealClicked());
         hit.onClick.AddListener(() => HitClicked());
         stand.onClick.AddListener(() => StandClicked());
-        chip1.onClick.AddListener(() => ChipClicked());
-        chip2.onClick.AddListener(() => ChipClicked());
-        chip3.onClick.AddListener(() => ChipClicked());
-        chip4.onClick.AddListener(() => ChipClicked());
-        chip5.onClick.AddListener(() => ChipClicked());
-        chip6.onClick.AddListener(() => ChipClicked());
-        chip7.onClick.AddListener(() => ChipClicked());
-        chip8.onClick.AddListener(() => ChipClicked());
-        chip9.onClick.AddListener(() => ChipClicked());
+        chip1.onClick.AddListener(() => ChipClicked(chip1));
+        chip2.onClick.AddListener(() => ChipClicked(chip2));
+        chip3.onClick.AddListener(() => ChipClicked(chip3));
+        chip4.onClick.AddListener(() => ChipClicked(chip4));
+        chip5.onClick.AddListener(() => ChipClicked(chip5));
+        chip6.onClick.AddListener(() => ChipClicked(chip6));
+        chip7.onClick.AddListener(() => ChipClicked(chip7));
+        chip8.onClick.AddListener(() => ChipClicked(chip8));
+        chip9.onClick.AddListener(() => ChipClicked(chip9));
+
+        betsText.text = "0";
     }
 
     private void DealClicked()
@@ -85,7 +87,7 @@ public class BJController : MonoBehaviour
             if (playerScript.handValue > 20) RoundOver();
         }
     }
-    
+
     private void StandClicked()
     {
         standClicked++;
@@ -113,7 +115,7 @@ public class BJController : MonoBehaviour
         if (standClicked < 2 && !playerBust && !dealerBust && !player21 && !dealer21) return;
         bool roundOver = true;
 
-        if(playerBust && dealerBust)
+        if (playerBust && dealerBust)
         {
             mainText.text = "All bust: Bets returned";
             playerScript.AdjustMoney(money / 2);
@@ -136,8 +138,8 @@ public class BJController : MonoBehaviour
         {
             roundOver = false;
         }
-        
-        if(roundOver)
+
+        if (roundOver)
         {
             hit.gameObject.SetActive(false);
             stand.gameObject.SetActive(false);
@@ -150,7 +152,7 @@ public class BJController : MonoBehaviour
         }
     }
 
-    private void ChipClicked()
+    /*private void ChipClicked()
     {
         TMP_Text newBet = chip1.GetComponentInChildren(typeof(TMP_Text)) as TMP_Text;
         int intBet = int.Parse(newBet.text.ToString().Remove(0, 1));
@@ -158,5 +160,45 @@ public class BJController : MonoBehaviour
         cashText.text = "$" + playerScript.GetMoney().ToString();
         money += (intBet * 2);
         betsText.text = "$" + money.ToString();
+    }*/
+
+    public void ChipClicked(Button button)
+    {
+        if (button == chip1)
+        {
+            betsText.text = (int.Parse(betsText.text) + 1).ToString();
+        }
+        else if (button == chip2)
+        {
+            betsText.text = (int.Parse(betsText.text) + 5).ToString();
+        }
+        else if (button == chip3)
+        {
+            betsText.text = (int.Parse(betsText.text) + 10).ToString();
+        }
+        else if (button == chip4)
+        {
+            betsText.text = (int.Parse(betsText.text) + 20).ToString();
+        }
+        else if (button == chip5)
+        {
+            betsText.text = (int.Parse(betsText.text) + 50).ToString();
+        }
+        else if (button == chip6)
+        {
+            betsText.text = (int.Parse(betsText.text) + 100).ToString();
+        }
+        else if (button == chip7)
+        {
+            betsText.text = (int.Parse(betsText.text) + 500).ToString();
+        }
+        else if (button == chip8)
+        {
+            betsText.text = (int.Parse(betsText.text) + 1000).ToString();
+        }
+        else if (button == chip8)
+        {
+            betsText.text = (int.Parse(betsText.text) + 5000).ToString();
+        }
     }
 }

@@ -22600,7 +22600,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1169028630}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1192581642}
+        m_TargetAssemblyTypeName: BJController, Assembly-CSharp
+        m_MethodName: ChipClicked
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1169028629}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Button, UnityEngine.UI
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1169028630
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23091,8 +23103,8 @@ MonoBehaviour:
   dealerScript: {fileID: 710305239}
   scoreText: {fileID: 1541758965}
   dealerScoreText: {fileID: 1586473135}
-  betsText: {fileID: 1541400638}
-  cashText: {fileID: 695420159}
+  betsText: {fileID: 695420159}
+  cashText: {fileID: 1541400638}
   mainText: {fileID: 1562370797}
   standBtnText: {fileID: 554852081}
   hideCard: {fileID: 493429792}
