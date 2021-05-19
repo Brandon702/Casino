@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class Card : MonoBehaviour
 {
@@ -19,18 +18,18 @@ public class Card : MonoBehaviour
     
     public void SetSprite(Sprite newSprite)
     {
-        gameObject.GetComponent<Image>().sprite = newSprite;
+        gameObject.GetComponent<SpriteRenderer>().sprite = newSprite;
     }
 
     public string GetSpriteName()
     {
-        return GetComponent<Image>().sprite.name;
+        return GetComponent<SpriteRenderer>().sprite.name;
     }
 
     public void ResetCard()
     {
         Sprite back = GameObject.Find("Deck").GetComponent<Deck>().GetCardBack();
-        gameObject.GetComponent<Image>().sprite = back;
+        gameObject.GetComponent<SpriteRenderer>().sprite = back;
         value = 0;
     }
 }
