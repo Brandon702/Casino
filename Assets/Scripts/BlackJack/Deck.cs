@@ -7,64 +7,56 @@ using UnityEngine;
 
 public class Deck : MonoBehaviour
 {
-    private List<Card> cards;
+    public Sprite[] cards;
+    int[] cardValue = new int[53];
+    private int currentIndex = 0;
 
-    public Deck()
+    private void Start()
     {
-        Initialize();
+        GetCardValues(); 
     }
 
-    public List<Card> GetDeck()
+    private void GetCardValues()
     {
-        List<Card> deck = new List<Card>();
-
-        for (int i = 0; i < 13; i++)
+        int num = 0;
+        for (int i = 0; i < cards.Length; i++)
         {
-            for (int j = 0; j < 4; j++)
+            num = i;
+            num %= 13;
+            if (num > 10 || num == 0)
             {
-                deck.Add(new Card((Suit)j, (Face)i));
+                num = 10;
             }
+            cardValue[i] = num++;
         }
-        return deck;
-    }
-
-    public List<Card> DealHand()
-    {
-        List<Card> hand = new List<Card>();
-        hand.Add(cards[0]);
-        hand.Add(cards[1]);
-
-        cards.RemoveRange(0, 2);
-
-        return hand;
-    }
-
-    public Card DrawCard()
-    {
-        Card card = cards[0];
-        cards.Remove(card);
-
-        return card;
     }
 
     public void Shuffle()
     {
-        System.Random rng = new System.Random();
-
-        int n = cards.Count;
-        while (n > 1)
+        for (int i = cards.Length - 1; i > 0; --i)
         {
-            n--;
-            int k = rng.Next(n + 1);
-            Card card = cards[k];
-            cards[k] = cards[n];
-            cards[n] = card;
+            int j = Mathf.FloorToInt(UnityEngine.Random.Range(0.0f, 1.0f) * cards.Length - 1) + 1;
+            Sprite face = cards[i];
+            cards[i] = cards[j];
+            cards[j] = face;
+
+            int value = cardValue[i];
+            cardValue[i] = cardValue[j];
+            cardValue[j] = value;
         }
+        currentIndex = 1;
     }
 
-    public void Initialize()
+    public int DealCard(Card card)
     {
-        cards = GetDeck();
-        Shuffle();
+        card.SetSprite(cards[currentIndex]);
+        card.SetValue(cardValue[currentIndex]);
+        currentIndex++;
+        return card.GetValueOfCard();
+    }
+
+    public Sprite GetCardBack()
+    {
+        return cards[0];
     }
 }
