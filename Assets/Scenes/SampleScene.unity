@@ -20072,7 +20072,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1045766996
 RectTransform:
   m_ObjectHideFlags: 0
@@ -20153,8 +20153,8 @@ MonoBehaviour:
   chip_1000: {fileID: 549940494}
   chip_5000: {fileID: 415454604}
   betValue: {fileID: 386612679}
-  chipsValue: {fileID: 683300544}
-  spin: {fileID: 121418955}
+  chipsValue: {fileID: 0}
+  spin: {fileID: 0}
 --- !u!1 &1050650634
 GameObject:
   m_ObjectHideFlags: 0
@@ -21258,7 +21258,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1096993370
 RectTransform:
   m_ObjectHideFlags: 0
@@ -23006,13 +23006,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   chip1: {fileID: 1169028629}
-  chip2: {fileID: 2091014075}
-  chip3: {fileID: 1479111259}
-  chip4: {fileID: 688156981}
+  chip2: {fileID: 688156981}
+  chip3: {fileID: 1743833710}
+  chip4: {fileID: 2091014075}
   chip5: {fileID: 833937655}
-  chip6: {fileID: 1104037355}
-  chip7: {fileID: 1743833710}
-  chip8: {fileID: 386495407}
+  chip6: {fileID: 386495407}
+  chip7: {fileID: 1479111259}
+  chip8: {fileID: 1104037355}
   chip9: {fileID: 641487825}
   deal: {fileID: 2012801988}
   hit: {fileID: 1007535006}
@@ -24776,7 +24776,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 3843197238820009612, guid: 219f6fc2260f69e40a1d61973311ee8e, type: 2}
-  m_audioClip: {fileID: 8300000, guid: b61b7cf3a61881240b315045556c5706, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 0614f701dee887847860691f6840fa28, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1

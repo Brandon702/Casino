@@ -70,10 +70,10 @@ public class BJController : MonoBehaviour
         stand.gameObject.SetActive(true);
         standBtnText.text = "Stand";
 
-        money = 0;
+        /*money = 0;
         betsText.text = "$" + money.ToString();
         playerScript.AdjustMoney(-15);
-        cashText.text = "$" + playerScript.GetMoney().ToString();
+        cashText.text = "$" + playerScript.GetMoney().ToString();*/
     }
 
     private void HitClicked()
@@ -145,7 +145,8 @@ public class BJController : MonoBehaviour
             mainText.gameObject.SetActive(true);
             dealerScoreText.gameObject.SetActive(true);
             hideCard.GetComponent<Renderer>().enabled = false;
-            cashText.text = "$" + playerScript.GetMoney().ToString();
+            betsText.text = "0";
+            //cashText.text = "$" + playerScript.GetMoney().ToString();
             standClicked = 0;
         }
     }
@@ -173,12 +174,15 @@ public class BJController : MonoBehaviour
 
     public void ChipClicked(Button button)
     {
+        Debug.Log("Chip Clicked");
         if (button == chip1)
         {
             if (int.Parse(cashText.text) >= 1)
             {
+                Debug.Log("Convert 1");
                 cashText.text = (int.Parse(cashText.text) - 1).ToString();
                 betsText.text = (int.Parse(betsText.text) + 1).ToString();
+                GameController.Instance.Chips = GameController.Instance.Chips - 1;
             }
 
         }
@@ -188,6 +192,7 @@ public class BJController : MonoBehaviour
             {
                 cashText.text = (int.Parse(cashText.text) - 5).ToString();
                 betsText.text = (int.Parse(betsText.text) + 5).ToString();
+                GameController.Instance.Chips = GameController.Instance.Chips - 5;
             }
         }
         else if (button == chip3)
@@ -196,6 +201,7 @@ public class BJController : MonoBehaviour
             {
                 cashText.text = (int.Parse(cashText.text) - 10).ToString();
                 betsText.text = (int.Parse(betsText.text) + 10).ToString();
+                GameController.Instance.Chips = GameController.Instance.Chips - 10;
             }
         }
         else if (button == chip4)
@@ -204,6 +210,7 @@ public class BJController : MonoBehaviour
             {
                 cashText.text = (int.Parse(cashText.text) - 20).ToString();
                 betsText.text = (int.Parse(betsText.text) + 20).ToString();
+                GameController.Instance.Chips = GameController.Instance.Chips - 20;
             }
         }
         else if (button == chip5)
@@ -212,6 +219,7 @@ public class BJController : MonoBehaviour
             {
                 cashText.text = (int.Parse(cashText.text) - 50).ToString();
                 betsText.text = (int.Parse(betsText.text) + 50).ToString();
+                GameController.Instance.Chips = GameController.Instance.Chips - 50;
             }
         }
         else if (button == chip6)
@@ -220,6 +228,7 @@ public class BJController : MonoBehaviour
             {
                 cashText.text = (int.Parse(cashText.text) - 100).ToString();
                 betsText.text = (int.Parse(betsText.text) + 100).ToString();
+                GameController.Instance.Chips = GameController.Instance.Chips - 100;
             }
         }
         else if (button == chip7)
@@ -228,6 +237,7 @@ public class BJController : MonoBehaviour
             {
                 cashText.text = (int.Parse(cashText.text) - 500).ToString();
                 betsText.text = (int.Parse(betsText.text) + 500).ToString();
+                GameController.Instance.Chips = GameController.Instance.Chips - 500;
             }
         }
         else if (button == chip8)
@@ -236,6 +246,7 @@ public class BJController : MonoBehaviour
             {
                 cashText.text = (int.Parse(cashText.text) - 1000).ToString();
                 betsText.text = (int.Parse(betsText.text) + 1000).ToString();
+                GameController.Instance.Chips = GameController.Instance.Chips - 1000;
             }
         }
         else if (button == chip9)
@@ -244,6 +255,7 @@ public class BJController : MonoBehaviour
             {
                 cashText.text = (int.Parse(cashText.text) - 5000).ToString();
                 betsText.text = (int.Parse(betsText.text) + 5000).ToString();
+                GameController.Instance.Chips = GameController.Instance.Chips - 5000;
             }
         }
     }
