@@ -22,13 +22,13 @@ public class RController : MonoBehaviour
 
     public void Start()
     {
-        chip_1.onClick.AddListener(() => chipClicked(chip_1));
-        chip_5.onClick.AddListener(() => chipClicked(chip_5));
-        chip_10.onClick.AddListener(() => chipClicked(chip_10));
-        chip_20.onClick.AddListener(() => chipClicked(chip_20));
-        chip_50.onClick.AddListener(() => chipClicked(chip_50));
-        chip_100.onClick.AddListener(() => chipClicked(chip_100));
-        chip_500.onClick.AddListener(() => chipClicked(chip_500));
+        chip_1.onClick.AddListener(()    => chipClicked(chip_1));
+        chip_5.onClick.AddListener(()    => chipClicked(chip_5));
+        chip_10.onClick.AddListener(()   => chipClicked(chip_10));
+        chip_20.onClick.AddListener(()   => chipClicked(chip_20));
+        chip_50.onClick.AddListener(()   => chipClicked(chip_50));
+        chip_100.onClick.AddListener(()  => chipClicked(chip_100));
+        chip_500.onClick.AddListener(()  => chipClicked(chip_500));
         chip_1000.onClick.AddListener(() => chipClicked(chip_1000));
         chip_5000.onClick.AddListener(() => chipClicked(chip_5000));
         spin.onClick.AddListener(() => play());
@@ -121,7 +121,7 @@ public class RController : MonoBehaviour
         }
     }
 
-    //Code for when board buttons clicked, bet value assigned to a position & set to 0 on display
+    //Code for when board buttons clicked, bet value assigned to a position & set bet to 0 on display
 
     public void play()
     {
