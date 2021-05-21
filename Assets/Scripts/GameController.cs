@@ -129,7 +129,7 @@ public class GameController : MonoBehaviour
                 CashToChips();
             }
         }
-        
+
         //Update Text
         cashText.text = Cash.ToString();
         chipsText.text = Chips.ToString();
@@ -150,14 +150,14 @@ public class GameController : MonoBehaviour
         if (Chips >= int.Parse(ChipsToCashInput.text))
         {
             Chips -= int.Parse(ChipsToCashInput.text);
-            Cash  += int.Parse(ChipsToCashInput.text);
+            Cash += int.Parse(ChipsToCashInput.text);
         }
         else if (Chips > 0)
         {
             int allChips = Chips;
-            Chips-= allChips;
+            Chips -= allChips;
             Cash += allChips;
-        }    
+        }
     }
 }
 

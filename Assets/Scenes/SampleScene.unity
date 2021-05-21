@@ -20072,7 +20072,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1045766996
 RectTransform:
   m_ObjectHideFlags: 0
@@ -20153,6 +20153,8 @@ MonoBehaviour:
   chip_1000: {fileID: 549940494}
   chip_5000: {fileID: 415454604}
   betValue: {fileID: 386612679}
+  chipsValue: {fileID: 683300544}
+  spin: {fileID: 121418955}
 --- !u!1 &1050650634
 GameObject:
   m_ObjectHideFlags: 0
@@ -21256,7 +21258,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1096993370
 RectTransform:
   m_ObjectHideFlags: 0
