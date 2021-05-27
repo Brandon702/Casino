@@ -3916,7 +3916,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1052750645}
-  m_RootOrder: 44
+  m_RootOrder: 45
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -14204,7 +14204,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1052750645}
-  m_RootOrder: 45
+  m_RootOrder: 46
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -20072,7 +20072,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1045766996
 RectTransform:
   m_ObjectHideFlags: 0
@@ -20153,8 +20153,59 @@ MonoBehaviour:
   chip_1000: {fileID: 549940494}
   chip_5000: {fileID: 415454604}
   betValue: {fileID: 386612679}
-  chipsValue: {fileID: 0}
-  spin: {fileID: 0}
+  chipsValue: {fileID: 683300544}
+  spin: {fileID: 121418955}
+  betPositions:
+  - {fileID: 112914722}
+  - {fileID: 1359943391}
+  - {fileID: 1730509821}
+  - {fileID: 231311154}
+  - {fileID: 978556293}
+  - {fileID: 1408505673}
+  - {fileID: 93923213}
+  - {fileID: 90406171}
+  - {fileID: 771985234}
+  - {fileID: 933604060}
+  - {fileID: 1821390359}
+  - {fileID: 1380889376}
+  - {fileID: 1583579055}
+  - {fileID: 1391887099}
+  - {fileID: 609432530}
+  - {fileID: 1770611143}
+  - {fileID: 983269113}
+  - {fileID: 863887014}
+  - {fileID: 1777909787}
+  - {fileID: 851730773}
+  - {fileID: 1371965833}
+  - {fileID: 1754358178}
+  - {fileID: 1451924941}
+  - {fileID: 842337609}
+  - {fileID: 1200424721}
+  - {fileID: 367874883}
+  - {fileID: 1265623602}
+  - {fileID: 1487843087}
+  - {fileID: 471644162}
+  - {fileID: 1030480323}
+  - {fileID: 27701539}
+  - {fileID: 2120114352}
+  - {fileID: 1792850886}
+  - {fileID: 1055637891}
+  - {fileID: 85871881}
+  - {fileID: 1660017249}
+  - {fileID: 860796598}
+  - {fileID: 642925066}
+  - {fileID: 540349054}
+  - {fileID: 1301508929}
+  - {fileID: 1448889942}
+  - {fileID: 1789002397}
+  - {fileID: 2023787387}
+  - {fileID: 1545777211}
+  - {fileID: 1860769201}
+  - {fileID: 173038306}
+  - {fileID: 680587325}
+  - {fileID: 341505494}
+  - {fileID: 1581742970}
+  betPositionValues: 
 --- !u!1 &1050650634
 GameObject:
   m_ObjectHideFlags: 0
@@ -20448,9 +20499,9 @@ RectTransform:
   - {fileID: 1789002396}
   - {fileID: 2023787386}
   - {fileID: 1545777210}
+  - {fileID: 1860769200}
   - {fileID: 173038305}
   - {fileID: 680587324}
-  - {fileID: 1860769200}
   - {fileID: 341505493}
   - {fileID: 1581742969}
   m_Father: {fileID: 1834024105}
@@ -21258,7 +21309,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1096993370
 RectTransform:
   m_ObjectHideFlags: 0
@@ -35896,7 +35947,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1052750645}
-  m_RootOrder: 46
+  m_RootOrder: 44
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
