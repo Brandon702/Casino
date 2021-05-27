@@ -20449,7 +20449,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   state: 0
-  Chips: 10000
+  Chips: 0
   Cash: 0
   gameOverPanel: {fileID: 71864472}
   CashToChipsInput: {fileID: 451715849}
@@ -20990,7 +20990,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1045766996
 RectTransform:
   m_ObjectHideFlags: 0
