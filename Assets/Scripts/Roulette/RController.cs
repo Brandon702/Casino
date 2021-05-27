@@ -19,7 +19,12 @@ public class RController : MonoBehaviour
     public TMP_Text chipsValue;
     public Button spin;
     public List<Button> betPositions = new List<Button>();
-    public List<int> betPositionValues = new List<int>();
+    public List<Sprite> chipImages = new List<Sprite>();
+    public Sprite blank;
+    public List<Location> locations = new List<Location>();
+
+
+    private List<int> betPositionValues = new List<int>();
 
     public void Start()
     {
@@ -32,15 +37,46 @@ public class RController : MonoBehaviour
         chip_500.onClick.AddListener(()  => chipClicked(chip_500));
         chip_1000.onClick.AddListener(() => chipClicked(chip_1000));
         chip_5000.onClick.AddListener(() => chipClicked(chip_5000));
-        spin.onClick.AddListener(() => play());
+        spin.onClick.AddListener(() => Play());
 
-        foreach(Button button in betPositions)
+        for (int i = 0; i < betPositions.Count; i++)
         {
-            button.onClick.AddListener(() => betSet(button));
-            Debug.Log("Value Set");
             betPositionValues.Add(0);
+            Button button = betPositions[i];
+
+        }
+
+        for(int i = 0; i <= 36; i++)
+        {
+            bool setEven;
+            eColors color = eColors.Green;
+
+            if (i % 2 == 0)
+            {
+                setEven = true;
+            }
+            else
+            {
+                setEven = false;
+            }
+
+            if (i == 0)
+            {
+                color = eColors.Green;
+            }
+            else if (i == 1 || i == 3 || i == 5 || i == 7 || i == 9 || i == 12 || i == 14 || i == 16 || i == 18 || i == 19 || i == 21 || i == 23 || i == 25 || i == 27 || i == 30 || i == 32 || i == 34 || i == 36)
+            {
+                color = eColors.Red;
+            }
+            else
+            {
+                color = eColors.Black;
+            }
+            locations.Add(new Location(i, color, setEven));
         }
     }
+
+
     public void OnEnable()
     {
         betValue.text = "0";
@@ -128,263 +164,328 @@ public class RController : MonoBehaviour
         }
     }
 
-    //Code for when board buttons clicked, bet value assigned to a position & set bet to 0 on display
+    //It takes in a default of button at index 0
 
     public void betSet(Button button)
     {
-        if(button = betPositions[0])
+        int location = -1;
+        if (button == betPositions[0])
         {
-            betPositionValues[0] = int.Parse(betValue.text);
+            location = 0;
         }
-        else if (button = betPositions[1])
+        else if (button == betPositions[1])
         {
-            betPositionValues[1] = int.Parse(betValue.text);
+            location = 1;
         }
-        else if (button = betPositions[2])
+        else if (button == betPositions[2])
         {
-            betPositionValues[2] = int.Parse(betValue.text);
+            location = 2;
         }
-        else if (button = betPositions[3])
+        else if (button == betPositions[3])
         {
-            betPositionValues[3] = int.Parse(betValue.text);
+            location = 3;
         }
-        else if (button = betPositions[4])
+        else if (button == betPositions[4])
         {
-            betPositionValues[4] = int.Parse(betValue.text);
+            location = 4;
         }
-        else if (button = betPositions[5])
+        else if (button == betPositions[5])
         {
-            betPositionValues[5] = int.Parse(betValue.text);
+            location = 5;
         }
-        else if (button = betPositions[6])
+        else if (button == betPositions[6])
         {
-            betPositionValues[6] = int.Parse(betValue.text);
+            location = 6;
         }
-        else if (button = betPositions[7])
+        else if (button == betPositions[7])
         {
-            betPositionValues[7] = int.Parse(betValue.text);
+            location = 7;
         }
-        else if (button = betPositions[8])
+        else if (button == betPositions[8])
         {
-            betPositionValues[8] = int.Parse(betValue.text);
+            location = 8;
         }
-        else if (button = betPositions[9])
+        else if (button == betPositions[9])
         {
-            betPositionValues[9] = int.Parse(betValue.text);
+            location = 9;
         }
-        else if (button = betPositions[10])
+        else if (button == betPositions[10])
         {
-            betPositionValues[10] = int.Parse(betValue.text);
+            location = 10;
         }
-        else if (button = betPositions[11])
+        else if (button == betPositions[11])
         {
-            betPositionValues[11] = int.Parse(betValue.text);
+            location = 11;
         }
-        else if (button = betPositions[12])
+        else if (button == betPositions[12])
         {
-            betPositionValues[12] = int.Parse(betValue.text);
+            location = 12;
         }
-        else if (button = betPositions[13])
+        else if (button == betPositions[13])
         {
-            betPositionValues[13] = int.Parse(betValue.text);
+            location = 13;
         }
-        else if (button = betPositions[14])
+        else if (button == betPositions[14])
         {
-            betPositionValues[14] = int.Parse(betValue.text);
+            location = 14;
         }
-        else if (button = betPositions[15])
+        else if (button == betPositions[15])
         {
-            betPositionValues[15] = int.Parse(betValue.text);
+            location = 15;
         }
-        else if (button = betPositions[16])
+        else if (button == betPositions[16])
         {
-            betPositionValues[16] = int.Parse(betValue.text);
+            location = 16;
         }
-        else if (button = betPositions[17])
+        else if (button == betPositions[17])
         {
-            betPositionValues[17] = int.Parse(betValue.text);
+            location = 17;
         }
-        else if (button = betPositions[18])
+        else if (button == betPositions[18])
         {
-            betPositionValues[18] = int.Parse(betValue.text);
+            location = 18;
         }
-        else if (button = betPositions[19])
+        else if (button == betPositions[19])
         {
-            betPositionValues[19] = int.Parse(betValue.text);
+            location = 19;
         }
-        else if (button = betPositions[20])
+        else if (button == betPositions[20])
         {
-            betPositionValues[20] = int.Parse(betValue.text);
+            location = 20;
         }
-        else if (button = betPositions[21])
+        else if (button == betPositions[21])
         {
-            betPositionValues[21] = int.Parse(betValue.text);
+            location = 21;
         }
-        else if (button = betPositions[22])
+        else if (button == betPositions[22])
         {
-            betPositionValues[22] = int.Parse(betValue.text);
+            location = 22;
         }
-        else if (button = betPositions[23])
+        else if (button == betPositions[23])
         {
-            betPositionValues[23] = int.Parse(betValue.text);
+            location = 23;
         }
-        else if (button = betPositions[24])
+        else if (button == betPositions[24])
         {
-            betPositionValues[24] = int.Parse(betValue.text);
+            location = 24;
         }
-        else if (button = betPositions[25])
+        else if (button == betPositions[25])
         {
-            betPositionValues[25] = int.Parse(betValue.text);
+            location = 25;
         }
-        else if (button = betPositions[26])
+        else if (button == betPositions[26])
         {
-            betPositionValues[26] = int.Parse(betValue.text);
+            location = 26;
         }
-        else if (button = betPositions[27])
+        else if (button == betPositions[27])
         {
-            betPositionValues[27] = int.Parse(betValue.text);
+            location = 27;
         }
-        else if (button = betPositions[28])
+        else if (button == betPositions[28])
         {
-            betPositionValues[28] = int.Parse(betValue.text);
+            location = 28;
         }
-        else if (button = betPositions[29])
+        else if (button == betPositions[29])
         {
-            betPositionValues[29] = int.Parse(betValue.text);
+            location = 29;
         }
-        else if (button = betPositions[30])
+        else if (button == betPositions[30])
         {
-            betPositionValues[30] = int.Parse(betValue.text);
+            location = 30;
         }
-        else if (button = betPositions[31])
+        else if (button == betPositions[31])
         {
-            betPositionValues[31] = int.Parse(betValue.text);
+            location = 31;
         }
-        else if (button = betPositions[32])
+        else if (button == betPositions[32])
         {
-            betPositionValues[32] = int.Parse(betValue.text);
+            location = 32;
         }
-        else if (button = betPositions[33])
+        else if (button == betPositions[33])
         {
-            betPositionValues[33] = int.Parse(betValue.text);
+            location = 33;
         }
-        else if (button = betPositions[34])
+        else if (button == betPositions[34])
         {
-            betPositionValues[34] = int.Parse(betValue.text);
+            location = 34;
         }
-        else if (button = betPositions[35])
+        else if (button == betPositions[35])
         {
-            betPositionValues[35] = int.Parse(betValue.text);
+            location = 35;
         }
-        else if (button = betPositions[36])
+        else if (button == betPositions[36])
         {
-            betPositionValues[36] = int.Parse(betValue.text);
+            location = 36;
         }
-        else if (button = betPositions[37])
+        else if (button == betPositions[37])
         {
-            betPositionValues[37] = int.Parse(betValue.text);
+            location = 37;
         }
-        else if (button = betPositions[38])
+        else if (button == betPositions[38])
         {
-            betPositionValues[38] = int.Parse(betValue.text);
+            location = 38;
         }
-        else if (button = betPositions[39])
+        else if (button == betPositions[39])
         {
-            betPositionValues[39] = int.Parse(betValue.text);
+            location = 39;
         }
-        else if (button = betPositions[40])
+        else if (button == betPositions[40])
         {
-            betPositionValues[40] = int.Parse(betValue.text);
+            location = 40;
         }
-        else if (button = betPositions[41])
+        else if (button == betPositions[41])
         {
-            betPositionValues[41] = int.Parse(betValue.text);
+            location = 41;
         }
-        else if (button = betPositions[42])
+        else if (button == betPositions[42])
         {
-            betPositionValues[42] = int.Parse(betValue.text);
+            location = 42;
         }
-        else if (button = betPositions[43])
+        else if (button == betPositions[43])
         {
-            betPositionValues[43] = int.Parse(betValue.text);
+            location = 43;
         }
-        else if (button = betPositions[44])
+        else if (button == betPositions[44])
         {
-            betPositionValues[44] = int.Parse(betValue.text);
+            location = 44;
         }
-        else if (button = betPositions[45])
+        else if (button == betPositions[45])
         {
-            betPositionValues[45] = int.Parse(betValue.text);
+            location = 45;
         }
-        else if (button = betPositions[46])
+        else if (button == betPositions[46])
         {
-            betPositionValues[46] = int.Parse(betValue.text);
+            location = 46;
         }
-        else if (button = betPositions[47])
+        else if (button == betPositions[47])
         {
-            betPositionValues[47] = int.Parse(betValue.text);
+            location = 47;
         }
-        else if (button = betPositions[48])
+        else if (button == betPositions[48])
         {
-            betPositionValues[48] = int.Parse(betValue.text);
+            location = 48;
         }
-        else if (button = betPositions[49])
-        {
-            betPositionValues[49] = int.Parse(betValue.text);
-        }
-        placeChip();
+        betPositionValues[location] += int.Parse(betValue.text);
+        betPositions[location].image.sprite = setChip();
         betValue.text = 0 + "";
     }
 
-    public void placeChip()
+    public Sprite setChip()
     {
+        Sprite chipImage = blank;
         //For placing chip textures over the button area
-        if (int.Parse(betValue.text) < 5)
+        if (int.Parse(betValue.text) < 5 && int.Parse(betValue.text) != 0)
         {
             //Place chip 1
+            chipImage = chipImages[0];
         }
-        else if (int.Parse(betValue.text) < 10)
+        else if (int.Parse(betValue.text) < 10 && int.Parse(betValue.text) != 0)
         {
             //Place chip 5
+            chipImage = chipImages[1];
         }
-        else if (int.Parse(betValue.text) < 20)
+        else if (int.Parse(betValue.text) < 20 && int.Parse(betValue.text) != 0)
         {
             //Place chip 10
+            chipImage = chipImages[2];
         }
-        else if (int.Parse(betValue.text) < 50)
+        else if (int.Parse(betValue.text) < 50 && int.Parse(betValue.text) != 0)
         {
             //Place chip 20
+            chipImage = chipImages[3];
         }
-        else if (int.Parse(betValue.text) < 100)
+        else if (int.Parse(betValue.text) < 100 && int.Parse(betValue.text) != 0)
         {
             //Place chip 50
+            chipImage = chipImages[4];
         }
-        else if (int.Parse(betValue.text) < 500)
+        else if (int.Parse(betValue.text) < 500 && int.Parse(betValue.text) != 0)
         {
             //Place chip 100
+            chipImage = chipImages[5];
         }
-        else if (int.Parse(betValue.text) < 1000)
+        else if (int.Parse(betValue.text) < 1000 && int.Parse(betValue.text) != 0)
         {
             //Place chip 500
+            chipImage = chipImages[6];
         }
-        else if (int.Parse(betValue.text) < 5000)
+        else if (int.Parse(betValue.text) < 5000 && int.Parse(betValue.text) != 0)
         {
             //Place chip 1000
+            chipImage = chipImages[7];
         }
-        else if (int.Parse(betValue.text) >= 5000)
+        else if (int.Parse(betValue.text) >= 5000 && int.Parse(betValue.text) != 0)
         {
             //Place chip 5000
+            chipImage = chipImages[8];
         }
+        else if (int.Parse(betValue.text) ==0)
+        {
+            //Dont change the image
+            //Low priority
+        }
+        return chipImage;
     }    
 
-    public void play()
+    public void Play()
     {
         //Game code goes here
-
-        //A list of positions, positions containing a color(enum red, black, or green) & a number, number can be nullable for color green
-        //Randomly select a position
         //If the position intersects with the players selected position(s), multiply money from that position & give to player in form of chips
-        //Reset all board values to 0
         //Note: if position is red 13 & player has money on red & 1-12, the player would only win from red & lose from 1-12
+
+        //Select a random position
+
+        //int selectedVal = Random.Range(1,36);
+        int totalVal = 0;
+        //Location selectedSpot = locations[selectedVal-1];
+        Location selectedSpot = locations[2];
+        //Debug.Log("Position landed on: " + selectedVal);
+        //Calculate total applicable win 
+        if (selectedSpot.val == 0)
+        {
+            totalVal = betPositionValues[48];
+            totalVal = totalVal * 5;
+            chipsValue.text = (int.Parse(chipsValue.text) + totalVal).ToString();
+        }
+        else
+        {
+            //If selected spot lands on a betslot with a value greater than 0
+            //if(selectedSpot.val == betPositionValues[selectedSpot.val])
+
+            //If selected spot lands on a betslot with the color Red or Black
+            if(selectedSpot._color == eColors.Red)
+            {
+                totalVal = betPositionValues[45];
+                totalVal = totalVal * 3;
+                chipsValue.text = (int.Parse(chipsValue.text) + totalVal).ToString();
+            }
+            else if(selectedSpot._color == eColors.Black)
+            {
+                totalVal = betPositionValues[46];
+                totalVal = totalVal * 3;
+                chipsValue.text = (int.Parse(chipsValue.text) + totalVal).ToString();
+            }
+
+            if (selectedSpot.even == true)
+            {
+                totalVal = betPositionValues[43];
+                totalVal = totalVal * 3;
+                chipsValue.text = (int.Parse(chipsValue.text) + totalVal).ToString();
+            }
+            else if (selectedSpot.even == false)
+            {
+                totalVal = betPositionValues[44];
+                totalVal = totalVal * 3;
+                chipsValue.text = (int.Parse(chipsValue.text) + totalVal).ToString();
+            }
+        }
+
+        //Reset Board
+        for (int i = 0; i < betPositions.Count; i++)
+        {
+            Button betPosition = betPositions[i];
+            betPosition.image.sprite = blank;
+            betPositionValues[i] = 0;
+        }
     }
 }
