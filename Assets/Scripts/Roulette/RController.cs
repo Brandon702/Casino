@@ -17,6 +17,7 @@ public class RController : MonoBehaviour
     public Button chip_5000;
     public TMP_Text betValue;
     public TMP_Text chipsValue;
+    public TMP_Text resultText;
     public Button spin;
     public List<Button> betPositions = new List<Button>();
     public List<Sprite> chipImages = new List<Sprite>();
@@ -429,103 +430,112 @@ public class RController : MonoBehaviour
 
     public void Play()
     {
-        //Game code goes here
-        //If the position intersects with the players selected position(s), multiply money from that position & give to player in form of chips
-        //Note: if position is red 13 & player has money on red & 1-12, the player would only win from red & lose from 1-12
+        int totalBetVal = 0;
 
-        //Select a random position
-
-        //int selectedVal = Random.Range(1,36);
-        int totalVal = 0;
-        //Location selectedSpot = locations[selectedVal-1];
-        Location selectedSpot = locations[2];
-        //Debug.Log("Position landed on: " + selectedVal);
-        //Calculate total applicable win 
-        if (selectedSpot.val == 0)
+        for(int i=0; i < betPositionValues.Count; i++)
         {
-            totalVal = betPositionValues[48];
-            totalVal = totalVal * 10;
-            chipsValue.text = (int.Parse(chipsValue.text) + totalVal).ToString();
+            totalBetVal += betPositionValues[i];
+        }
+
+        if(totalBetVal != 0)
+        {
+            //Select a random position
+            int selectedVal = Random.Range(0, 36);
+            int totalVal = 0;
+            Location selectedSpot = locations[selectedVal];
+            resultText.text = "Position: " + (selectedSpot.val);
+            if (selectedSpot.even) resultText.text += " | Even/Odd: Even";
+            else resultText.text += " | Even/Odd: Odd";
+            resultText.text += " | Color: " + selectedSpot._color;
+            if (selectedSpot.val == 0)
+            {
+                totalVal = betPositionValues[48];
+                totalVal = totalVal * 10;
+                chipsValue.text = (int.Parse(chipsValue.text) + totalVal).ToString();
+            }
+            else
+            {
+                if (selectedSpot.val <= 18)
+                {
+                    totalVal = betPositionValues[42];
+                    totalVal = totalVal * 2;
+                    chipsValue.text = (int.Parse(chipsValue.text) + totalVal).ToString();
+                }
+                if (selectedSpot.val >= 19)
+                {
+                    totalVal = betPositionValues[47];
+                    totalVal = totalVal * 2;
+                    chipsValue.text = (int.Parse(chipsValue.text) + totalVal).ToString();
+                }
+                if (selectedSpot._color == eColors.Red)
+                {
+                    totalVal = betPositionValues[45];
+                    totalVal = totalVal * 2;
+                    chipsValue.text = (int.Parse(chipsValue.text) + totalVal).ToString();
+                }
+                if (selectedSpot._color == eColors.Black)
+                {
+                    totalVal = betPositionValues[46];
+                    totalVal = totalVal * 2;
+                    chipsValue.text = (int.Parse(chipsValue.text) + totalVal).ToString();
+                }
+                if (selectedSpot.even == true)
+                {
+                    totalVal = betPositionValues[43];
+                    totalVal = totalVal * 2;
+                    chipsValue.text = (int.Parse(chipsValue.text) + totalVal).ToString();
+                }
+                if (selectedSpot.even == false)
+                {
+                    totalVal = betPositionValues[44];
+                    totalVal = totalVal * 2;
+                    chipsValue.text = (int.Parse(chipsValue.text) + totalVal).ToString();
+                }
+                if (selectedSpot.val <= 12)
+                {
+                    totalVal = betPositionValues[39];
+                    totalVal = totalVal * 3;
+                    chipsValue.text = (int.Parse(chipsValue.text) + totalVal).ToString();
+                }
+                if (selectedSpot.val > 12 && selectedSpot.val < 25)
+                {
+                    totalVal = betPositionValues[40];
+                    totalVal = totalVal * 3;
+                    chipsValue.text = (int.Parse(chipsValue.text) + totalVal).ToString();
+                }
+                if (selectedSpot.val >= 25)
+                {
+                    totalVal = betPositionValues[41];
+                    totalVal = totalVal * 3;
+                    chipsValue.text = (int.Parse(chipsValue.text) + totalVal).ToString();
+                }
+                if (selectedSpot.val == 1 || selectedSpot.val == 4 || selectedSpot.val == 7 || selectedSpot.val == 10 || selectedSpot.val == 13 || selectedSpot.val == 16 || selectedSpot.val == 19 || selectedSpot.val == 22 || selectedSpot.val == 25 || selectedSpot.val == 28 || selectedSpot.val == 31 || selectedSpot.val == 34)
+                {
+                    totalVal = betPositionValues[36];
+                    totalVal = totalVal * 3;
+                    chipsValue.text = (int.Parse(chipsValue.text) + totalVal).ToString();
+                }
+                if (selectedSpot.val == 2 || selectedSpot.val == 5 || selectedSpot.val == 8 || selectedSpot.val == 11 || selectedSpot.val == 14 || selectedSpot.val == 17 || selectedSpot.val == 20 || selectedSpot.val == 23 || selectedSpot.val == 26 || selectedSpot.val == 29 || selectedSpot.val == 32 || selectedSpot.val == 35)
+                {
+                    totalVal = betPositionValues[37];
+                    totalVal = totalVal * 3;
+                    chipsValue.text = (int.Parse(chipsValue.text) + totalVal).ToString();
+                }
+                if (selectedSpot.val == 3 || selectedSpot.val == 6 || selectedSpot.val == 9 || selectedSpot.val == 12 || selectedSpot.val == 15 || selectedSpot.val == 18 || selectedSpot.val == 21 || selectedSpot.val == 24 || selectedSpot.val == 27 || selectedSpot.val == 30 || selectedSpot.val == 33 || selectedSpot.val == 36)
+                {
+                    totalVal = betPositionValues[38];
+                    totalVal = totalVal * 3;
+                    chipsValue.text = (int.Parse(chipsValue.text) + totalVal).ToString();
+                }
+                totalVal = betPositionValues[selectedSpot.val - 1];
+                totalVal = totalVal * 5;
+                chipsValue.text = (int.Parse(chipsValue.text) + totalVal).ToString();
+            }
         }
         else
         {
-            if(selectedSpot.val <= 18)
-            {
-                totalVal = betPositionValues[42];
-                totalVal = totalVal * 2;
-                chipsValue.text = (int.Parse(chipsValue.text) + totalVal).ToString();
-            }
-            if (selectedSpot.val >= 19)
-            {
-                totalVal = betPositionValues[47];
-                totalVal = totalVal * 2;
-                chipsValue.text = (int.Parse(chipsValue.text) + totalVal).ToString();
-            }
-            if (selectedSpot._color == eColors.Red)
-            {
-                totalVal = betPositionValues[45];
-                totalVal = totalVal * 2;
-                chipsValue.text = (int.Parse(chipsValue.text) + totalVal).ToString();
-            }
-            if(selectedSpot._color == eColors.Black)
-            {
-                totalVal = betPositionValues[46];
-                totalVal = totalVal * 2;
-                chipsValue.text = (int.Parse(chipsValue.text) + totalVal).ToString();
-            }
-            if (selectedSpot.even == true)
-            {
-                totalVal = betPositionValues[43];
-                totalVal = totalVal * 2;
-                chipsValue.text = (int.Parse(chipsValue.text) + totalVal).ToString();
-            }
-            if (selectedSpot.even == false)
-            {
-                totalVal = betPositionValues[44];
-                totalVal = totalVal * 2;
-                chipsValue.text = (int.Parse(chipsValue.text) + totalVal).ToString();
-            }
-            if (selectedSpot.val <= 12)
-            {
-                totalVal = betPositionValues[39];
-                totalVal = totalVal * 3;
-                chipsValue.text = (int.Parse(chipsValue.text) + totalVal).ToString();
-            }
-            if (selectedSpot.val > 12 && selectedSpot.val < 25)
-            {
-                totalVal = betPositionValues[40];
-                totalVal = totalVal * 3;
-                chipsValue.text = (int.Parse(chipsValue.text) + totalVal).ToString();
-            }
-            if (selectedSpot.val >= 25)
-            {
-                totalVal = betPositionValues[41];
-                totalVal = totalVal * 3;
-                chipsValue.text = (int.Parse(chipsValue.text) + totalVal).ToString();
-            }
-            if(selectedSpot.val == 1 || selectedSpot.val == 4 || selectedSpot.val == 7 || selectedSpot.val == 10 || selectedSpot.val == 13 || selectedSpot.val == 16 || selectedSpot.val == 19 || selectedSpot.val == 22 || selectedSpot.val == 25 || selectedSpot.val == 28 || selectedSpot.val == 31 || selectedSpot.val == 34)
-            {
-                totalVal = betPositionValues[36];
-                totalVal = totalVal * 3;
-                chipsValue.text = (int.Parse(chipsValue.text) + totalVal).ToString();
-            }
-            if (selectedSpot.val == 2 || selectedSpot.val == 5 || selectedSpot.val == 8 || selectedSpot.val == 11 || selectedSpot.val == 14 || selectedSpot.val == 17 || selectedSpot.val == 20 || selectedSpot.val == 23 || selectedSpot.val == 26 || selectedSpot.val == 29 || selectedSpot.val == 32 || selectedSpot.val == 35)
-            {
-                totalVal = betPositionValues[37];
-                totalVal = totalVal * 3;
-                chipsValue.text = (int.Parse(chipsValue.text) + totalVal).ToString();
-            }
-            if (selectedSpot.val == 3 || selectedSpot.val == 6 || selectedSpot.val == 9 || selectedSpot.val == 12 || selectedSpot.val == 15 || selectedSpot.val == 18 || selectedSpot.val == 21 || selectedSpot.val == 24 || selectedSpot.val == 27 || selectedSpot.val == 30 || selectedSpot.val == 33 || selectedSpot.val == 36)
-            {
-                totalVal = betPositionValues[38];
-                totalVal = totalVal * 3;
-                chipsValue.text = (int.Parse(chipsValue.text) + totalVal).ToString();
-            }
-            totalVal = betPositionValues[selectedSpot.val-1];
-            totalVal = totalVal * 5;
-            chipsValue.text = (int.Parse(chipsValue.text) + totalVal).ToString();
+            resultText.text = "Please enter a bet to spin the wheel";
         }
-
         //Reset Board
         for (int i = 0; i < betPositions.Count; i++)
         {
@@ -533,5 +543,6 @@ public class RController : MonoBehaviour
             betPosition.image.sprite = blank;
             betPositionValues[i] = 0;
         }
+        totalBetVal = 0;
     }
 }
