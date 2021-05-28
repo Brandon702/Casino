@@ -22,10 +22,11 @@ public class SController : MonoBehaviour
     public TMP_Text betsText;
     public TMP_Text cashText;
     public TMP_Text mainText;
-    public TMP_Text spinBtnText;
 
-    public ImageRandom imageRandom;
-
+    public ImageRandom imageRandom1;
+    public ImageRandom imageRandom2;
+    public ImageRandom imageRandom3;
+    private bool roundOver = true;
     void Start()
     {
         chip1.onClick.AddListener(() => ChipClicked(chip1));
@@ -39,60 +40,80 @@ public class SController : MonoBehaviour
         chip9.onClick.AddListener(() => ChipClicked(chip9));
     }
 
-    /*private void RoundOver()
+    public void RoundOver()
     {
-        bool threeStack1 = imageRandom.;
-        bool threeStack2 = ;
-        bool threeStack3 = ;
-        bool threeStack4 = ;
-        bool threeStack5 = ;
-        bool threeStack6 = ;
-        bool threeStack7 = ;
-        bool threeStack8 = ;
-        bool threeStack9 = ;
+        int totalVal = 0;
 
-        if (*//*make sure the game is not won*//*) return;
-        bool roundOver = true;
+        if (imageRandom1.compareSprites == imageRandom2.compareSprites && imageRandom2.compareSprites == imageRandom3.compareSprites && imageRandom3.compareSprites == imageRandom1.compareSprites)
+        {
+            if (imageRandom1.sprites[0])
+            {
+                totalVal = int.Parse(betsText.text);
 
-        if (*//*the images are matched*//*)
-        {
-            if(*//*threestack1 is matched completely*//*)
-            {
-                mainText.text = "You Win!";
+                totalVal = totalVal * 500000;
+                cashText.text = (int.Parse(cashText.text) + totalVal).ToString();
             }
-            else if(*//*threestack2 is matched completely*//*)
+            else if (imageRandom1.sprites[1])
             {
-                mainText.text = "You Win!";
+                totalVal = int.Parse(betsText.text);
+
+                totalVal = totalVal * 100000;
+                cashText.text = (int.Parse(cashText.text) + totalVal).ToString();
             }
-            else if(*//*threestack3 is matched completely*//*)
+            else if (imageRandom1.sprites[2])
             {
-                mainText.text = "You Win!";
+                totalVal = int.Parse(betsText.text);
+
+                totalVal = totalVal * 50000;
+                cashText.text = (int.Parse(cashText.text) + totalVal).ToString();
             }
-            else if(*//*threestack4 is matched completely*//*)
+            else if (imageRandom1.sprites[3])
             {
-                mainText.text = "You Win!";
+                totalVal = int.Parse(betsText.text);
+
+                totalVal = totalVal * 20000;
+                cashText.text = (int.Parse(cashText.text) + totalVal).ToString();
             }
-            else if(*//*threestack5 is matched completely*//*)
+            else if (imageRandom1.sprites[4])
             {
-                mainText.text = "You Win!";
+                totalVal = int.Parse(betsText.text);
+
+                totalVal = totalVal * 10000;
+                cashText.text = (int.Parse(cashText.text) + totalVal).ToString();
             }
-            else if(*//*threestack7 is matched completely*//*)
+            else if (imageRandom1.sprites[5])
             {
-                mainText.text = "You Win!";
+                totalVal = int.Parse(betsText.text);
+
+                totalVal = totalVal * 5000;
+                cashText.text = (int.Parse(cashText.text) + totalVal).ToString();
             }
-            else if(*//*threestack8 is matched completely*//*)
+            else if (imageRandom1.sprites[6])
             {
-                mainText.text = "You Win!";
+                totalVal = int.Parse(betsText.text);
+
+                totalVal = totalVal * 3000;
+                cashText.text = (int.Parse(cashText.text) + totalVal).ToString();
             }
-            else if(*//*threestack9 is matched completely*//*)
+            else if (imageRandom1.sprites[7])
             {
-                mainText.text = "You Win!";
+                totalVal = int.Parse(betsText.text);
+
+                totalVal = totalVal * 2000;
+                cashText.text = (int.Parse(cashText.text) + totalVal).ToString();
             }
-        }
-        else
-        {
-            roundOver = false;
-        }
+            else if (imageRandom1.sprites[9])
+            {
+                totalVal = int.Parse(betsText.text);
+
+                totalVal = totalVal * 1000;
+                cashText.text = (int.Parse(cashText.text) + totalVal).ToString();
+            }
+            else
+            {
+                roundOver = false;
+            }
+        }  
 
         if (roundOver)
         {
@@ -101,7 +122,7 @@ public class SController : MonoBehaviour
             mainText.gameObject.SetActive(true);
             betsText.text = "0";
         }
-    }*/
+    }
 
     public void OnEnable()
     {

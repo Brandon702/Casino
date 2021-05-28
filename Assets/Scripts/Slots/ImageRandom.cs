@@ -10,6 +10,9 @@ public class ImageRandom : MonoBehaviour
 {
     public Sprite[] sprites;
     public float stopTime;
+    public int compareSprites = 0;
+
+    public SController sController;
 
     private void Update()
     {
@@ -18,12 +21,15 @@ public class ImageRandom : MonoBehaviour
 
     private void RandomImage()
     {
-        gameObject.GetComponent<Image>().sprite = sprites[UnityEngine.Random.Range(0, sprites.Length)];
+        int rng = UnityEngine.Random.Range(0, sprites.Length);
+        compareSprites = rng;
+        gameObject.GetComponent<Image>().sprite = sprites[rng];
     }
 
     private void EndRand()
     {
         enabled = false;
+        sController.RoundOver();
     }
 
     public void StopRand()
