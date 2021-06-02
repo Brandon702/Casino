@@ -22686,7 +22686,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1096993370
 RectTransform:
   m_ObjectHideFlags: 0
@@ -24703,6 +24703,18 @@ MonoBehaviour:
   cashText: {fileID: 1541400638}
   mainText: {fileID: 1562370797}
   standBtnText: {fileID: 554852081}
+  playerCards:
+  - {fileID: 1153044596}
+  - {fileID: 440508504}
+  - {fileID: 109256344}
+  - {fileID: 1424141721}
+  - {fileID: 263594130}
+  - {fileID: 380860297}
+  dealerCards:
+  - {fileID: 60109824}
+  - {fileID: 1717206082}
+  - {fileID: 476137681}
+  - {fileID: 380651167}
   hideCard: {fileID: 493429792}
 --- !u!1 &1194499909
 GameObject:
@@ -29313,7 +29325,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1444989961
 RectTransform:
   m_ObjectHideFlags: 0
