@@ -30,8 +30,13 @@ public class BJController : MonoBehaviour
     public TMP_Text mainText;
     public TMP_Text standBtnText;
 
+    public GameObject[] playerCards;
+    public GameObject[] dealerCards;
+
     public GameObject hideCard;
     int money = 0;
+    int hitCards = 0;
+    int dealCards = 0;
 
     void Start()
     {
@@ -82,6 +87,8 @@ public class BJController : MonoBehaviour
         {
             playerScript.GetCard();
             scoreText.text = playerScript.handValue.ToString();
+            playerCards[hitCards].GetComponent<Image>().enabled = true;
+            hitCards++;
             if (playerScript.handValue > 20) RoundOver();
         }
     }
@@ -100,6 +107,8 @@ public class BJController : MonoBehaviour
         {
             dealerScript.GetCard();
             dealerScoreText.text = "Hand: " + dealerScript.handValue.ToString();
+            dealerCards[dealCards].GetComponent<Image>().enabled = true;
+            hitCards++;
         }
     }
 
@@ -146,6 +155,18 @@ public class BJController : MonoBehaviour
             dealerScoreText.gameObject.SetActive(true);
             hideCard.GetComponent<Renderer>().enabled = false;
             betsText.text = "0";
+
+            foreach (GameObject go in playerCards)
+            {
+                go.GetComponent<Image>().enabled = false;
+            }
+            hitCards = 0;
+            
+            foreach (GameObject dc in dealerCards)
+            {
+                dc.GetComponent<Image>().enabled = false;
+            }
+            dealCards = 0;
             //cashText.text = "$" + playerScript.GetMoney().ToString();
             standClicked = 0;
         }
